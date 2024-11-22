@@ -1,0 +1,5 @@
+{
+    "js/my_crm_app.min.js": [
+        "/js/crm_lead.js"
+    ]
+}

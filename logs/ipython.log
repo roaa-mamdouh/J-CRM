@@ -1,0 +1,89 @@
+2024-11-13 17:23:08,086 INFO ipython === bench console session ===
+2024-11-13 17:23:08,086 INFO ipython import frappe
+2024-11-13 17:23:08,086 INFO ipython workspace_name = 'property_ms'
+2024-11-13 17:23:08,087 INFO ipython workspace = frappe.get_doc("Workspace", workspace_name)
+2024-11-13 17:23:08,087 INFO ipython workspace = frappe.get_doc("Workspace", "property ms)
+2024-11-13 17:23:08,087 INFO ipython workspace = frappe.get_doc("Workspace", "property ms")
+2024-11-13 17:23:08,087 INFO ipython workspace.public = 1
+2024-11-13 17:23:08,087 INFO ipython workspace.is_standard = 1
+2024-11-13 17:23:08,087 INFO ipython workspace.save()
+2024-11-13 17:23:08,087 INFO ipython if not workspace.title:
+    print("yes")
+    
+2024-11-13 17:23:08,088 INFO ipython if not workspace.title:
+    workspace.title = "property ms"
+    
+2024-11-13 17:23:08,088 INFO ipython workspace.save()
+2024-11-13 17:23:08,088 INFO ipython workspace.save()
+2024-11-13 17:23:08,088 INFO ipython print(workspace.public)
+2024-11-13 17:23:08,088 INFO ipython workspace.save(ignore_version=True)
+2024-11-13 17:23:08,089 INFO ipython workspace.save(ignore_version=True)
+2024-11-13 17:23:08,089 INFO ipython import frappe
+
+# Replace 'Workspace Name' with the name of the workspace you want to make public and standard
+workspace_name = 'property ms'
+
+# Ensure the workspace exists
+workspace = frappe.db.exists("Workspace", workspace_name)
+if workspace:
+    # Directly set the values in the database to make the workspace public and standard
+    frappe.db.set_value("Workspace", workspace_name, "public", 1)
+    frappe.db.set_value("Workspace", workspace_name, "is_standard", 1)
+    
+    # If the title is None, set a default title
+    title = frappe.db.get_value("Workspace", workspace_name, "title")
+    if not title:
+        frappe.db.set_value("Workspace", workspace_name, "title", "property ms")
+    
+    # Commit the changes to the database
+    frappe.db.commit()
+    print("Workspace updated successfully.")
+else:
+    print("Workspace not found.")
+    
+2024-11-13 17:23:08,089 INFO ipython print(workspace.public)
+2024-11-13 17:23:08,089 INFO ipython workspace = frappe.get_doc("Workspace", "property ms")
+2024-11-13 17:23:08,089 INFO ipython print(workspace.public)
+2024-11-13 17:23:08,089 INFO ipython print(workspace.is_standard)
+2024-11-13 17:23:08,090 INFO ipython workspace.is_standard = 1
+2024-11-13 17:23:08,090 INFO ipython print(workspace.is_standard)
+2024-11-13 17:23:08,090 INFO ipython frappe.db.commit()
+2024-11-13 17:23:08,090 INFO ipython === session end ===
+2024-11-13 17:29:24,706 INFO ipython === bench console session ===
+2024-11-13 17:29:24,707 INFO ipython workspace = frappe.get_doc("Workspace", "home")
+2024-11-13 17:29:24,707 INFO ipython print(workspace.is_standard)
+2024-11-13 17:29:24,707 INFO ipython print(workspace.public)
+2024-11-13 17:29:24,707 INFO ipython workspace = frappe.get_doc("Workspace", "property ms")
+2024-11-13 17:29:24,707 INFO ipython print(workspace.public)
+2024-11-13 17:29:24,707 INFO ipython workspace.is_standard = 0
+2024-11-13 17:29:24,707 INFO ipython frappe.db.commit()
+2024-11-13 17:29:24,707 INFO ipython === session end ===
+2024-11-13 17:30:54,311 INFO ipython === bench console session ===
+2024-11-13 17:30:54,311 INFO ipython workspace = frappe.get_doc("Workspace", "property ms")
+2024-11-13 17:30:54,311 INFO ipython workspace.public = 0
+2024-11-13 17:30:54,311 INFO ipython frappe.db.commit()
+2024-11-13 17:30:54,311 INFO ipython === session end ===
+2024-11-13 17:32:42,259 INFO ipython === bench console session ===
+2024-11-13 17:32:42,259 INFO ipython print(workspace.public)
+2024-11-13 17:32:42,259 INFO ipython workspace = frappe.get_doc("Workspace", "property ms")
+2024-11-13 17:32:42,259 INFO ipython print(workspace.public)
+2024-11-13 17:32:42,259 INFO ipython workspace.public = 0
+2024-11-13 17:32:42,259 INFO ipython print(workspace.public)
+2024-11-13 17:32:42,259 INFO ipython frappe.db.commit()
+2024-11-13 17:32:42,260 INFO ipython print(workspace.public)
+2024-11-13 17:32:42,260 INFO ipython frappe.db.commit()
+2024-11-13 17:32:42,260 INFO ipython === session end ===
+2024-11-13 17:39:33,581 INFO ipython === bench console session ===
+2024-11-13 17:39:33,581 INFO ipython workspace = frappe.get_doc("Workspace", "property ms")
+2024-11-13 17:39:33,581 INFO ipython print(workspace.public)
+2024-11-13 17:39:33,581 INFO ipython workspace.public = 0
+2024-11-13 17:39:33,581 INFO ipython frappe.db.set_value("Workspace", "property ms", "public", 0)
+2024-11-13 17:39:33,581 INFO ipython frappe.db.commit()
+2024-11-13 17:39:33,581 INFO ipython frappe.db.commit()
+2024-11-13 17:39:33,581 INFO ipython frappe.db.commit()
+2024-11-13 17:39:33,581 INFO ipython === session end ===
+2024-11-13 17:41:08,331 INFO ipython === bench console session ===
+2024-11-13 17:41:08,332 INFO ipython print(workspace.public)
+2024-11-13 17:41:08,332 INFO ipython workspace = frappe.get_doc("Workspace", "property ms")
+2024-11-13 17:41:08,332 INFO ipython print(workspace.public)
+2024-11-13 17:41:08,332 INFO ipython === session end ===

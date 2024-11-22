@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: propms
+Version: 1.7.0
+Summary: Property Management Solution
+Author: Aakvatech
+Author-email: info@aakvatech.com
+License-File: LICENSE
+Requires-Dist: frappe
+Requires-Dist: erpnext
+Requires-Dist: csf_tz

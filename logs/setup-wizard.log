@@ -1,0 +1,87 @@
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/desk/page/setup_wizard/setup_wizard.py", line 81, in process_setup_stages
+    task.get("fn")(task.get("args"))
+      stages = [{'status': 'Updating global settings', 'fail_msg': 'Failed to update global settings', 'tasks': [{'fn': <function update_global_settings at 0x737de5380540>, 'args': {'language': 'English', 'country': 'Egypt', 'timezone': 'Africa/Cairo', 'currency': 'EGP', 'full_name': 'roaa', 'email': 'roaaabdelhadyy@gmail.com', 'password': '14101001', 'company_name': 'roaa', 'company_abbr': 'R', 'chart_of_accounts': 'Standard', 'fy_start_date': '2024-07-01', 'fy_end_date': '2025-06-30', 'setup_demo': 0}, 'fail_msg': 'Failed to update global settings'}]}, {'status': 'Installing presets', 'fail_msg': 'Failed to install presets', 'tasks': [{'fn': <function stage_fixtures at 0x737de05c16c0>, 'args': {'language': 'English', 'country': 'Egypt', 'timezone': 'Africa/Cairo', 'currency': 'EGP', 'full_name': 'roaa', 'email': 'roaaabdelhadyy@gmail.com', 'password': '14101001', 'company_name': 'roaa', 'company_abbr': 'R', 'chart_of_accounts': 'Standard', 'fy_start_date': '2024-07-01', 'fy_end_date': '2025-06-30',...
+      user_input = {'language': 'English', 'country': 'Egypt', 'timezone': 'Africa/Cairo', 'currency': 'EGP', 'full_name': 'roaa', 'email': 'roaaabdelhadyy@gmail.com', 'password': '********', 'company_name': 'roaa', 'company_abbr': 'R', 'chart_of_accounts': 'Standard', 'fy_start_date': '2024-07-01', 'fy_end_date': '2025-06-30', 'setup_demo': 0}
+      is_background_task = False
+      capture = <function capture at 0x737de39a5ee0>
+      current_task = {'fn': <function update_global_settings at 0x737de5380540>, 'args': {'language': 'English', 'country': 'Egypt', 'timezone': 'Africa/Cairo', 'currency': 'EGP', 'full_name': 'roaa', 'email': 'roaaabdelhadyy@gmail.com', 'password': '14101001', 'company_name': 'roaa', 'company_abbr': 'R', 'chart_of_accounts': 'Standard', 'fy_start_date': '2024-07-01', 'fy_end_date': '2025-06-30', 'setup_demo': 0}, 'fail_msg': 'Failed to update global settings'}
+      idx = 0
+      stage = {'status': 'Updating global settings', 'fail_msg': 'Failed to update global settings', 'tasks': [{'fn': <function update_global_settings at 0x737de5380540>, 'args': {'language': 'English', 'country': 'Egypt', 'timezone': 'Africa/Cairo', 'currency': 'EGP', 'full_name': 'roaa', 'email': 'roaaabdelhadyy@gmail.com', 'password': '14101001', 'company_name': 'roaa', 'company_abbr': 'R', 'chart_of_accounts': 'Standard', 'fy_start_date': '2024-07-01', 'fy_end_date': '2025-06-30', 'setup_demo': 0}, 'fail_msg': 'Failed to update global settings'}]}
+      task = {'fn': <function update_global_settings at 0x737de5380540>, 'args': {'language': 'English', 'country': 'Egypt', 'timezone': 'Africa/Cairo', 'currency': 'EGP', 'full_name': 'roaa', 'email': 'roaaabdelhadyy@gmail.com', 'password': '14101001', 'company_name': 'roaa', 'company_abbr': 'R', 'chart_of_accounts': 'Standard', 'fy_start_date': '2024-07-01', 'fy_end_date': '2025-06-30', 'setup_demo': 0}, 'fail_msg': 'Failed to update global settings'}
+  File "apps/frappe/frappe/desk/page/setup_wizard/setup_wizard.py", line 111, in update_global_settings
+    create_or_update_user(args)
+      args = {'language': 'English', 'country': 'Egypt', 'timezone': 'Africa/Cairo', 'currency': 'EGP', 'full_name': 'roaa', 'email': 'roaaabdelhadyy@gmail.com', 'password': '********', 'company_name': 'roaa', 'company_abbr': 'R', 'chart_of_accounts': 'Standard', 'fy_start_date': '2024-07-01', 'fy_end_date': '2025-06-30', 'setup_demo': 0}
+  File "apps/frappe/frappe/desk/page/setup_wizard/setup_wizard.py", line 226, in create_or_update_user
+    user.insert()
+      args = {'language': 'English', 'country': 'Egypt', 'timezone': 'Africa/Cairo', 'currency': 'EGP', 'full_name': 'roaa', 'email': 'roaaabdelhadyy@gmail.com', 'password': '********', 'company_name': 'roaa', 'company_abbr': 'R', 'chart_of_accounts': 'Standard', 'fy_start_date': '2024-07-01', 'fy_end_date': '2025-06-30', 'setup_demo': 0}
+      email = 'roaaabdelhadyy@gmail.com'
+      first_name = 'roaa'
+      last_name = ''
+      user = <User: unsaved>
+      _mute_emails = False
+  File "apps/frappe/frappe/model/document.py", line 279, in insert
+    self._set_defaults()
+      self = <User: unsaved>
+      ignore_permissions = None
+      ignore_links = None
+      ignore_if_duplicate = False
+      ignore_mandatory = None
+      set_name = None
+      set_child_names = True
+  File "apps/frappe/frappe/model/document.py", line 788, in _set_defaults
+    new_doc = frappe.new_doc(df.options, parent_doc=self, parentfield=df.fieldname, as_dict=True)
+      self = <User: unsaved>
+      new_doc = {'name': None, 'owner': 'Administrator', 'creation': None, 'modified': None, 'modified_by': None, 'docstatus': 0, 'idx': 0, 'enabled': 1, 'email': None, 'first_name': None, 'middle_name': None, 'last_name': None, 'full_name': None, 'username': None, 'language': 'en', 'time_zone': None, 'send_welcome_email': 1, 'unsubscribed': 0, 'user_image': None, 'role_profile_name': None, 'module_profile': None, 'home_settings': None, 'gender': None, 'birth_date': None, 'interest': None, 'phone': None, 'location': None, 'bio': None, 'mobile_no': None, 'mute_sounds': 0, 'desk_theme': 'Light', 'code_editor_type': 'vscode', 'banner_image': None, 'search_bar': 1, 'notifications': 1, 'list_sidebar': 1, 'bulk_actions': 1, 'view_switcher': 1, 'form_sidebar': 1, 'timeline': 1, 'dashboard': 1, 'new_password': None, 'logout_all_sessions': 1, 'reset_password_key': None, 'last_reset_password_key_generated_on': None, 'last_password_reset_date': None, 'redirect_url': None, 'document_follow_notify': 0, 'document_f...
+      df = <Table MultiSelectDocField: role_profiles parent=User>
+  File "apps/frappe/frappe/__init__.py", line 1203, in new_doc
+    new_doc = get_new_doc(doctype, parent_doc, parentfield, as_dict=as_dict)
+      doctype = 'User Role Profile'
+      parent_doc = <User: unsaved>
+      parentfield = 'role_profiles'
+      as_dict = True
+      kwargs = {}
+      get_new_doc = <function get_new_doc at 0x737de2911300>
+  File "apps/frappe/frappe/model/create_new.py", line 22, in get_new_doc
+    frappe.local.new_doc_templates[doctype] = make_new_doc(doctype)
+      doctype = 'User Role Profile'
+      parent_doc = <User: unsaved>
+      parentfield = 'role_profiles'
+      as_dict = True
+  File "apps/frappe/frappe/model/create_new.py", line 35, in make_new_doc
+    doc = frappe.get_doc({"doctype": doctype, "__islocal": 1, "owner": frappe.session.user, "docstatus": 0})
+      doctype = 'User Role Profile'
+  File "apps/frappe/frappe/__init__.py", line 1346, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+      args = ({'doctype': 'User Role Profile', '__islocal': 1, 'owner': 'Administrator', 'docstatus': 0},)
+      kwargs = {}
+      frappe = <module 'frappe' from 'apps/frappe/frappe/__init__.py'>
+  File "apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+      args = ({'doctype': 'User Role Profile', '__islocal': 1, 'owner': 'Administrator', 'docstatus': 0},)
+      kwargs = {'doctype': 'User Role Profile', '__islocal': 1, 'owner': 'Administrator', 'docstatus': 0}
+      doctype = 'User Role Profile'
+  File "apps/frappe/frappe/model/base_document.py", line 66, in get_controller
+    return import_controller(doctype)
+      doctype = 'User Role Profile'
+  File "apps/frappe/frappe/model/base_document.py", line 95, in import_controller
+    module = load_doctype_module(doctype, module_name)
+      doctype = 'User Role Profile'
+      Document = <class 'frappe.model.document.Document'>
+      NestedSet = <class 'frappe.utils.nestedset.NestedSet'>
+      module_name = 'Core'
+      doctype_info = {'name': 'User Role Profile', 'creation': datetime.datetime(2024, 1, 29, 13, 43, 27, 545608), 'modified': datetime.datetime(2024, 3, 23, 16, 4, 0, 948988), 'modified_by': 'Administrator', 'owner': 'Administrator', 'docstatus': 0, 'idx': 0, 'search_fields': None, 'issingle': 0, 'is_virtual': 0, 'is_tree': 0, 'istable': 1, 'editable_grid': 1, 'track_changes': 0, 'module': 'Core', 'restrict_to_domain': None, 'app': None, 'autoname': None, 'naming_rule': None, 'title_field': None, 'image_field': None, 'timeline_field': None, 'sort_field': 'creation', 'sort_order': 'DESC', 'description': None, 'colour': None, 'read_only': 0, 'in_create': 0, 'menu_index': None, 'parent_node': None, 'smallicon': None, 'allow_copy': 0, 'allow_rename': 1, 'allow_import': 0, 'hide_toolbar': 0, 'track_seen': 0, 'max_attachments': 0, 'print_outline': None, 'document_type': None, 'icon': None, 'color': None, 'tag_fields': None, 'subject': None, '_last_update': None, 'engine': 'InnoDB', 'default_print_format': None,...
+      module_path = None
+      class_overrides = {'Address': ['erpnext.accounts.custom.address.ERPNextAddress']}
+  File "apps/frappe/frappe/modules/utils.py", line 258, in load_doctype_module
+    raise ImportError(msg) from e
+      doctype = 'User Role Profile'
+      module = 'Core'
+      prefix = ''
+      suffix = ''
+      app = 'frappe'
+      key = ********
+      module_name = 'frappe.core.doctype.user_role_profile.user_role_profile'
+      msg = "Module import failed for User Role Profile, the DocType you're trying to open might be deleted.\nError: No module named 'frappe.core.doctype.user_role_profile.user_role_profile'"
+builtins.ImportError: Module import failed for User Role Profile, the DocType you're trying to open might be deleted.
+Error: No module named 'frappe.core.doctype.user_role_profile.user_role_profile'{"language": "English", "country": "Egypt", "timezone": "Africa/Cairo", "currency": "EGP", "full_name": "roaa", "email": "roaaabdelhadyy@gmail.com", "password": "14101001", "company_name": "roaa", "company_abbr": "R", "chart_of_accounts": "Standard", "fy_start_date": "2024-07-01", "fy_end_date": "2025-06-30", "setup_demo": 0}

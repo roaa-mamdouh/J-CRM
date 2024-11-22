@@ -1,0 +1,833 @@
+2024-11-12 21:47:10,703 DEBUG cd final && python3 -m venv env
+2024-11-12 21:47:14,804 DEBUG cd final && /home/roaa/final/env/bin/python -m pip install --quiet --upgrade pip
+2024-11-12 21:47:17,217 DEBUG cd final && /home/roaa/final/env/bin/python -m pip install --quiet wheel
+2024-11-12 21:47:18,754 LOG Getting frappe
+2024-11-12 21:47:18,754 DEBUG cd final/apps && git clone https://github.com/frappe/frappe.git  --depth 1 --origin upstream
+2024-11-12 21:47:32,416 LOG Installing frappe
+2024-11-12 21:47:32,416 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip install --quiet --upgrade -e /home/roaa/final/apps/frappe 
+2024-11-12 21:48:23,454 DEBUG cd /home/roaa/final/apps/frappe && yarn install --check-files
+2024-11-12 21:48:38,655 DEBUG cd /home/roaa/final && sudo supervisorctl restart frappe:
+2024-11-12 21:48:38,920 WARNING cd /home/roaa/final && sudo supervisorctl restart frappe: executed with exit code 2
+2024-11-12 21:48:38,920 WARNING restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+2024-11-12 21:48:38,921 DEBUG cd final && bench build
+2024-11-12 21:48:39,096 INFO /home/roaa/frappe-env/bin/bench build
+2024-11-12 21:49:02,634 LOG setting up backups
+2024-11-12 21:49:02,667 LOG backups were set up
+2024-11-12 21:49:02,667 INFO Bench final initialized
+2024-11-12 21:49:33,656 INFO /home/roaa/frappe-env/bin/bench get-app erpnex --branch version-15
+2024-11-12 21:49:34,486 WARNING /home/roaa/frappe-env/bin/bench get-app erpnex --branch version-15 executed with exit code 1
+2024-11-12 21:49:39,534 INFO /home/roaa/frappe-env/bin/bench get-app erpnext --branch version-15
+2024-11-12 21:49:40,037 LOG Getting erpnext
+2024-11-12 21:49:40,037 DEBUG cd ./apps && git clone https://github.com/frappe/erpnext.git --branch version-15 --depth 1 --origin upstream
+2024-11-12 21:50:44,930 LOG Installing erpnext
+2024-11-12 21:50:44,934 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip install --quiet --upgrade -e /home/roaa/final/apps/erpnext 
+2024-11-12 21:51:01,327 DEBUG cd /home/roaa/final/apps/erpnext && yarn install --check-files
+2024-11-12 21:51:01,842 DEBUG bench build --app erpnext
+2024-11-12 21:51:02,015 INFO /home/roaa/frappe-env/bin/bench build --app erpnext
+2024-11-12 21:51:05,946 DEBUG cd /home/roaa/final && sudo supervisorctl restart frappe:
+2024-11-12 21:51:06,210 WARNING cd /home/roaa/final && sudo supervisorctl restart frappe: executed with exit code 2
+2024-11-12 21:51:06,210 WARNING restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+2024-11-12 21:51:26,977 INFO /home/roaa/frappe-env/bin/bench new-site final.local
+2024-11-12 21:52:27,732 INFO /home/roaa/frappe-env/bin/bench use final.local
+2024-11-12 21:52:39,847 INFO /home/roaa/frappe-env/bin/bench install-app erpnext
+2024-11-12 21:53:06,770 INFO /home/roaa/frappe-env/bin/bench switch-to-branch version-15 frappe
+2024-11-12 21:53:06,779 INFO Fetching upstream unshallow for frappe
+2024-11-12 21:53:06,779 DEBUG cd ./apps/frappe && git remote set-branches upstream  '*'
+2024-11-12 21:53:06,781 DEBUG cd ./apps/frappe && git fetch --all --unshallow --quiet
+2024-11-12 21:54:19,238 WARNING cd ./apps/frappe && git fetch --all --unshallow --quiet executed with exit code 128
+2024-11-12 21:54:19,239 WARNING /home/roaa/frappe-env/bin/bench switch-to-branch version-15 frappe executed with exit code 1
+2024-11-12 21:55:31,879 INFO /home/roaa/frappe-env/bin/bench update --reset fix it
+2024-11-12 21:55:31,888 WARNING /home/roaa/frappe-env/bin/bench update --reset fix it executed with exit code 2
+2024-11-12 21:55:38,265 INFO /home/roaa/frappe-env/bin/bench update --reset
+2024-11-12 21:55:40,399 LOG pulling frappe
+2024-11-12 21:55:40,400 DEBUG cd /home/roaa/final/apps/frappe && git fetch --depth=1 --no-tags upstream develop
+2024-11-12 21:55:41,206 DEBUG cd /home/roaa/final/apps/frappe && git reset --hard upstream/develop
+2024-11-12 21:55:41,547 DEBUG cd /home/roaa/final/apps/frappe && git reflog expire --all
+2024-11-12 21:55:41,550 DEBUG cd /home/roaa/final/apps/frappe && git gc --prune=all
+2024-11-12 21:55:41,694 DEBUG cd /home/roaa/final/apps/frappe && find . -name "*.pyc" -delete
+2024-11-12 21:55:41,783 LOG pulling erpnext
+2024-11-12 21:55:41,783 DEBUG cd /home/roaa/final/apps/erpnext && git fetch --depth=1 --no-tags upstream version-15
+2024-11-12 21:55:42,577 DEBUG cd /home/roaa/final/apps/erpnext && git reset --hard upstream/version-15
+2024-11-12 21:55:43,074 DEBUG cd /home/roaa/final/apps/erpnext && git reflog expire --all
+2024-11-12 21:55:43,079 DEBUG cd /home/roaa/final/apps/erpnext && git gc --prune=all
+2024-11-12 21:55:43,273 DEBUG cd /home/roaa/final/apps/erpnext && find . -name "*.pyc" -delete
+2024-11-12 21:55:43,298 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip install --quiet --upgrade pip
+2024-11-12 21:55:44,618 LOG Installing frappe
+2024-11-12 21:55:44,618 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip install --quiet --upgrade -e /home/roaa/final/apps/frappe 
+2024-11-12 21:55:48,770 DEBUG cd /home/roaa/final/apps/frappe && yarn install --check-files
+2024-11-12 21:55:50,877 LOG Installing erpnext
+2024-11-12 21:55:50,878 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip install --quiet --upgrade -e /home/roaa/final/apps/erpnext 
+2024-11-12 21:55:54,351 DEBUG cd /home/roaa/final/apps/erpnext && yarn install --check-files
+2024-11-12 21:56:27,966 INFO /home/roaa/frappe-env/bin/bench switch-to-branch version-15 frappe
+2024-11-12 21:56:27,975 INFO Fetching upstream unshallow for frappe
+2024-11-12 21:56:27,975 DEBUG cd ./apps/frappe && git remote set-branches upstream  '*'
+2024-11-12 21:56:27,978 DEBUG cd ./apps/frappe && git fetch --all --unshallow --quiet
+2024-11-12 22:02:14,564 DEBUG cd ./apps/frappe && git checkout -f version-15
+2024-11-12 22:02:14,911 INFO Successfully switched branches for: frappe
+2024-11-12 22:02:48,529 INFO /home/roaa/frappe-env/bin/bench update --patch
+2024-11-12 22:02:49,387 WARNING shallow_clone is set in your bench config.
+However without passing the --reset flag, your repositories will be unshallowed.
+To avoid this, cancel this operation and run `bench update --reset`.
+
+Consider the consequences of `git reset --hard` on your apps before you run that.
+To avoid seeing this warning, set shallow_clone to false in your common_site_config.json
+		
+2024-11-12 22:03:00,236 WARNING /home/roaa/frappe-env/bin/bench update --patch executed with exit code 1
+2024-11-12 22:03:13,260 INFO /home/roaa/frappe-env/bin/bench install-app erpnext
+2024-11-12 22:04:29,595 INFO /home/roaa/frappe-env/bin/bench install-app erpnext
+2024-11-12 22:04:36,011 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-12 22:04:51,979 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-12 22:04:52,264 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-12 22:04:52,269 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-12 22:04:52,281 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-12 22:04:52,289 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-12 22:05:09,034 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-12 22:05:09,349 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-12 22:05:09,352 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-12 22:05:09,353 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-12 22:05:09,360 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-12 22:05:15,927 INFO /home/roaa/frappe-env/bin/bench install-app erpnext
+2024-11-12 22:05:22,447 INFO /home/roaa/frappe-env/bin/bench build
+2024-11-12 22:06:08,769 INFO /home/roaa/frappe-env/bin/bench migrate
+2024-11-12 22:06:14,374 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-12 22:06:14,658 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-12 22:06:14,672 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-12 22:06:14,687 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-12 22:06:14,704 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-12 22:07:54,890 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-12 22:07:55,193 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-12 22:07:55,195 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-12 22:07:55,196 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-12 22:07:55,208 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-12 22:13:27,954 INFO /home/roaa/frappe-env/bin/bench set-maintenance-mode off
+2024-11-12 22:13:30,861 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-12 22:13:31,155 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-12 22:13:31,157 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-12 22:13:31,167 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-12 22:13:31,185 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-12 22:15:50,799 INFO /usr/local/bin/bench update --reset
+2024-11-12 22:15:53,677 LOG pulling frappe
+2024-11-12 22:15:53,677 DEBUG cd /home/roaa/final/apps/frappe && git fetch --depth=1 --no-tags upstream version-15
+2024-11-12 22:15:54,524 DEBUG cd /home/roaa/final/apps/frappe && git reset --hard upstream/version-15
+2024-11-12 22:15:54,812 DEBUG cd /home/roaa/final/apps/frappe && git reflog expire --all
+2024-11-12 22:15:54,879 DEBUG cd /home/roaa/final/apps/frappe && git gc --prune=all
+2024-11-12 22:16:05,579 DEBUG cd /home/roaa/final/apps/frappe && find . -name "*.pyc" -delete
+2024-11-12 22:16:05,697 LOG pulling erpnext
+2024-11-12 22:16:05,697 DEBUG cd /home/roaa/final/apps/erpnext && git fetch --depth=1 --no-tags upstream version-15
+2024-11-12 22:16:06,644 DEBUG cd /home/roaa/final/apps/erpnext && git reset --hard upstream/version-15
+2024-11-12 22:16:06,667 DEBUG cd /home/roaa/final/apps/erpnext && git reflog expire --all
+2024-11-12 22:16:06,670 DEBUG cd /home/roaa/final/apps/erpnext && git gc --prune=all
+2024-11-12 22:16:07,044 DEBUG cd /home/roaa/final/apps/erpnext && find . -name "*.pyc" -delete
+2024-11-12 22:16:07,098 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip install --quiet --upgrade pip
+2024-11-12 22:16:08,520 LOG Installing frappe
+2024-11-12 22:16:08,520 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip install --quiet --upgrade -e /home/roaa/final/apps/frappe 
+2024-11-12 22:16:13,246 DEBUG cd /home/roaa/final/apps/frappe && yarn install --check-files
+2024-11-12 22:16:19,309 LOG Installing erpnext
+2024-11-12 22:16:19,309 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip install --quiet --upgrade -e /home/roaa/final/apps/erpnext 
+2024-11-12 22:16:23,279 DEBUG cd /home/roaa/final/apps/erpnext && yarn install --check-files
+2024-11-12 22:17:51,010 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-12 22:17:51,314 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-12 22:17:51,325 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-12 22:17:51,349 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-12 22:17:51,429 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-12 22:20:17,934 INFO /home/roaa/frappe-env/bin/bench get-app https://github.com/aakvatech/CSF_TZ.git
+2024-11-12 22:20:17,944 LOG Getting CSF_TZ
+2024-11-12 22:20:17,944 DEBUG cd ./apps && git clone https://github.com/aakvatech/CSF_TZ.git  --depth 1 --origin upstream
+2024-11-12 22:20:19,906 LOG Installing csf_tz
+2024-11-12 22:20:19,906 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip install --quiet --upgrade -e /home/roaa/final/apps/csf_tz 
+2024-11-12 22:20:24,365 DEBUG cd /home/roaa/final/apps/csf_tz && yarn install --check-files
+2024-11-12 22:20:26,931 DEBUG bench build --app csf_tz
+2024-11-12 22:20:27,123 INFO /home/roaa/frappe-env/bin/bench build --app csf_tz
+2024-11-12 22:20:34,012 DEBUG cd /home/roaa/final && sudo supervisorctl restart frappe:
+2024-11-12 22:20:34,326 WARNING cd /home/roaa/final && sudo supervisorctl restart frappe: executed with exit code 2
+2024-11-12 22:20:34,326 WARNING restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+2024-11-12 22:20:48,594 INFO /home/roaa/frappe-env/bin/bench install-app csf_tz
+2024-11-12 22:22:03,749 INFO /home/roaa/frappe-env/bin/bench install-app csf_tz
+2024-11-12 22:22:10,816 INFO /home/roaa/frappe-env/bin/bench build
+2024-11-12 22:22:41,761 INFO /home/roaa/frappe-env/bin/bench install-app csf_tz
+2024-11-12 22:22:54,281 INFO /home/roaa/frappe-env/bin/bench update --reset
+2024-11-12 22:23:00,278 LOG pulling frappe
+2024-11-12 22:23:00,279 DEBUG cd /home/roaa/final/apps/frappe && git fetch --depth=1 --no-tags upstream version-15
+2024-11-12 22:23:01,339 DEBUG cd /home/roaa/final/apps/frappe && git reset --hard upstream/version-15
+2024-11-12 22:23:01,376 DEBUG cd /home/roaa/final/apps/frappe && git reflog expire --all
+2024-11-12 22:23:01,453 DEBUG cd /home/roaa/final/apps/frappe && git gc --prune=all
+2024-11-12 22:23:13,420 DEBUG cd /home/roaa/final/apps/frappe && find . -name "*.pyc" -delete
+2024-11-12 22:23:13,536 LOG pulling erpnext
+2024-11-12 22:23:13,537 DEBUG cd /home/roaa/final/apps/erpnext && git fetch --depth=1 --no-tags upstream version-15
+2024-11-12 22:23:14,754 DEBUG cd /home/roaa/final/apps/erpnext && git reset --hard upstream/version-15
+2024-11-12 22:23:14,787 DEBUG cd /home/roaa/final/apps/erpnext && git reflog expire --all
+2024-11-12 22:23:14,791 DEBUG cd /home/roaa/final/apps/erpnext && git gc --prune=all
+2024-11-12 22:23:15,123 DEBUG cd /home/roaa/final/apps/erpnext && find . -name "*.pyc" -delete
+2024-11-12 22:23:15,227 LOG pulling csf_tz
+2024-11-12 22:23:15,227 DEBUG cd /home/roaa/final/apps/csf_tz && git fetch --depth=1 --no-tags upstream master
+2024-11-12 22:23:16,215 DEBUG cd /home/roaa/final/apps/csf_tz && git reset --hard upstream/master
+2024-11-12 22:23:16,287 DEBUG cd /home/roaa/final/apps/csf_tz && git reflog expire --all
+2024-11-12 22:23:16,292 DEBUG cd /home/roaa/final/apps/csf_tz && git gc --prune=all
+2024-11-12 22:23:16,376 DEBUG cd /home/roaa/final/apps/csf_tz && find . -name "*.pyc" -delete
+2024-11-12 22:23:16,406 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip install --quiet --upgrade pip
+2024-11-12 22:23:17,926 LOG Installing frappe
+2024-11-12 22:23:17,926 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip install --quiet --upgrade -e /home/roaa/final/apps/frappe 
+2024-11-12 22:23:22,112 DEBUG cd /home/roaa/final/apps/frappe && yarn install --check-files
+2024-11-12 22:23:25,678 LOG Installing erpnext
+2024-11-12 22:23:25,679 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip install --quiet --upgrade -e /home/roaa/final/apps/erpnext 
+2024-11-12 22:23:28,979 DEBUG cd /home/roaa/final/apps/erpnext && yarn install --check-files
+2024-11-12 22:23:29,349 LOG Installing csf_tz
+2024-11-12 22:23:29,349 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip install --quiet --upgrade -e /home/roaa/final/apps/csf_tz 
+2024-11-12 22:23:35,582 DEBUG cd /home/roaa/final/apps/csf_tz && yarn install --check-files
+2024-11-12 22:23:37,889 WARNING /home/roaa/frappe-env/bin/bench update --reset executed with exit code 1
+2024-11-12 22:24:35,133 INFO /home/roaa/frappe-env/bin/bench install-app csf_tz
+2024-11-12 22:24:43,860 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-12 22:24:44,236 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-12 22:24:44,265 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-12 22:24:44,278 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-12 22:24:44,304 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-12 22:27:46,629 INFO /usr/local/bin/bench migrate
+2024-11-12 22:28:26,203 INFO /usr/local/bin/bench use final.local
+2024-11-12 22:28:36,239 INFO /usr/local/bin/bench install-app csf_tz
+2024-11-12 22:29:03,793 INFO /home/roaa/frappe-env/bin/bench get-app https://github.com/aakvatech/CSF_TZ.git
+2024-11-12 22:29:03,806 LOG Getting CSF_TZ
+2024-11-12 22:29:03,807 DEBUG cd ./apps && git clone https://github.com/aakvatech/CSF_TZ.git  --depth 1 --origin upstream
+2024-11-12 22:29:05,137 LOG Installing csf_tz
+2024-11-12 22:29:05,137 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip install --quiet --upgrade -e /home/roaa/final/apps/csf_tz 
+2024-11-12 22:29:09,690 DEBUG cd /home/roaa/final/apps/csf_tz && yarn install --check-files
+2024-11-12 22:29:12,060 DEBUG bench build --app csf_tz
+2024-11-12 22:29:12,370 INFO /home/roaa/frappe-env/bin/bench build --app csf_tz
+2024-11-12 22:29:15,816 DEBUG cd /home/roaa/final && sudo supervisorctl restart frappe:
+2024-11-12 22:29:16,169 WARNING cd /home/roaa/final && sudo supervisorctl restart frappe: executed with exit code 2
+2024-11-12 22:29:16,169 WARNING restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+2024-11-12 22:29:24,411 INFO /home/roaa/frappe-env/bin/bench install-app csf_tz
+2024-11-12 22:30:36,956 INFO /home/roaa/frappe-env/bin/bench logs
+2024-11-12 22:30:55,726 INFO /home/roaa/frappe-env/bin/bench build
+2024-11-12 22:31:26,729 INFO /home/roaa/frappe-env/bin/bench restart
+2024-11-12 22:31:27,266 DEBUG cd /home/roaa/final && sudo supervisorctl restart frappe:
+2024-11-12 22:31:27,587 WARNING cd /home/roaa/final && sudo supervisorctl restart frappe: executed with exit code 2
+2024-11-12 22:31:27,587 WARNING /home/roaa/frappe-env/bin/bench restart executed with exit code 1
+2024-11-12 22:31:31,905 INFO /home/roaa/frappe-env/bin/bench clear-cache
+2024-11-12 22:31:41,341 INFO /home/roaa/frappe-env/bin/bench clear-website-cache
+2024-11-12 22:31:50,030 INFO /home/roaa/frappe-env/bin/bench install-app csf_tz
+2024-11-12 22:32:32,086 INFO /home/roaa/frappe-env/bin/bench migrate
+2024-11-12 22:32:37,873 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-12 22:32:38,262 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-12 22:32:38,266 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-12 22:32:38,328 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-12 22:32:38,338 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-12 22:32:44,418 INFO /usr/local/bin/bench migrate
+2024-11-12 22:33:08,881 INFO /usr/local/bin/bench restart
+2024-11-12 22:33:12,710 DEBUG cd /home/roaa/final && sudo supervisorctl restart frappe:
+2024-11-12 22:33:13,051 WARNING cd /home/roaa/final && sudo supervisorctl restart frappe: executed with exit code 2
+2024-11-12 22:33:13,052 WARNING /usr/local/bin/bench restart executed with exit code 1
+2024-11-12 22:33:34,562 INFO /usr/local/bin/bench install-app csf_tz
+2024-11-12 22:35:20,999 INFO /usr/local/bin/bench mysql
+2024-11-12 22:39:06,508 INFO /usr/local/bin/bench install-app csf_tz
+2024-11-12 22:43:21,368 INFO /usr/local/bin/bench start
+2024-11-12 22:43:26,477 INFO /usr/local/bin/bench install-app csf_tz
+2024-11-12 22:44:29,061 INFO /usr/local/bin/bench reinstall
+2024-11-12 22:47:57,912 INFO /usr/local/bin/bench install-app csf_tz
+2024-11-12 22:48:38,133 INFO /usr/local/bin/bench install-app csf_tz
+2024-11-12 22:48:41,861 INFO /usr/local/bin/bench reinstall
+2024-11-12 22:58:10,690 INFO /usr/local/bin/bench install-app csf_tz
+2024-11-12 22:59:33,627 INFO /usr/local/bin/bench get-app https://github.com/aakvatech/PropMS.git
+2024-11-12 22:59:33,640 LOG Getting PropMS
+2024-11-12 22:59:33,640 DEBUG cd ./apps && git clone https://github.com/aakvatech/PropMS.git  --depth 1 --origin upstream
+2024-11-12 22:59:34,983 LOG Installing propms
+2024-11-12 22:59:34,983 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip install --quiet --upgrade -e /home/roaa/final/apps/propms 
+2024-11-12 22:59:38,373 DEBUG bench build --app propms
+2024-11-12 22:59:38,590 INFO /usr/local/bin/bench build --app propms
+2024-11-12 22:59:45,765 DEBUG cd /home/roaa/final && sudo supervisorctl restart frappe:
+2024-11-12 22:59:46,085 WARNING cd /home/roaa/final && sudo supervisorctl restart frappe: executed with exit code 2
+2024-11-12 22:59:46,085 WARNING restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+2024-11-12 23:00:06,370 INFO /usr/local/bin/bench start
+2024-11-12 23:03:08,850 INFO /usr/local/bin/bench install-app propms
+2024-11-12 23:03:48,480 INFO /usr/local/bin/bench migrate
+2024-11-12 23:04:49,668 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-12 23:04:50,058 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-12 23:04:50,069 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-12 23:04:50,080 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-12 23:04:50,136 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-12 23:42:16,922 INFO /usr/local/bin/bench migrate
+2024-11-12 23:48:00,116 INFO /usr/local/bin/bench list-apps
+2024-11-13 00:00:02,648 INFO /home/roaa/frappe-env/bin/bench --verbose --site all backup
+2024-11-13 00:02:35,840 INFO /usr/local/bin/bench set-config -g developer_mode 1
+2024-11-13 00:04:02,254 INFO /usr/local/bin/bench migrate
+2024-11-13 00:04:41,376 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-13 00:04:41,683 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-13 00:04:41,716 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-13 00:04:41,730 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-13 00:04:41,749 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-13 00:16:13,314 INFO /usr/local/bin/bench clear-cach
+2024-11-13 00:16:17,016 INFO /usr/local/bin/bench clear-cache
+2024-11-13 00:16:25,946 INFO /usr/local/bin/bench clear-website-cache
+2024-11-13 00:34:50,973 INFO /usr/local/bin/bench build
+2024-11-13 00:35:20,818 INFO /usr/local/bin/bench migrate
+2024-11-13 00:35:50,514 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-13 00:35:50,846 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-13 00:35:50,862 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-13 00:35:50,868 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-13 00:35:50,961 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-13 00:42:17,739 INFO /usr/local/bin/bench migrate
+2024-11-13 00:57:47,699 INFO /usr/local/bin/bench migrate
+2024-11-13 01:04:34,272 INFO /usr/local/bin/bench migrate
+2024-11-13 01:07:26,863 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-13 01:07:27,272 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-13 01:07:27,274 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-13 01:07:27,310 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-13 01:07:27,321 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-13 08:46:55,776 INFO /home/roaa/frappe-env/bin/bench uninstall-app erpnext
+2024-11-13 08:47:17,248 INFO /usr/local/bin/bench start
+2024-11-13 08:47:17,588 INFO /usr/local/bin/bench watch
+2024-11-13 08:47:17,597 INFO /usr/local/bin/bench worker
+2024-11-13 08:47:17,599 INFO /usr/local/bin/bench serve --port 8001
+2024-11-13 08:47:17,613 INFO /usr/local/bin/bench schedule
+2024-11-13 08:47:20,976 INFO /home/roaa/frappe-env/bin/bench uninstall-app erpnext
+2024-11-13 08:48:08,601 INFO /home/roaa/frappe-env/bin/bench uninstall-app erpnext
+2024-11-13 08:48:16,264 INFO /home/roaa/frappe-env/bin/bench migrate
+2024-11-13 08:48:45,039 INFO /home/roaa/frappe-env/bin/bench restart
+2024-11-13 08:48:48,904 DEBUG cd /home/roaa/final && sudo supervisorctl restart frappe:
+2024-11-13 08:48:49,179 WARNING cd /home/roaa/final && sudo supervisorctl restart frappe: executed with exit code 2
+2024-11-13 08:48:49,179 WARNING /home/roaa/frappe-env/bin/bench restart executed with exit code 1
+2024-11-13 08:48:54,884 INFO /usr/local/bin/bench start
+2024-11-13 08:48:55,239 INFO /usr/local/bin/bench serve --port 8001
+2024-11-13 08:48:55,248 INFO /usr/local/bin/bench worker
+2024-11-13 08:48:55,263 INFO /usr/local/bin/bench watch
+2024-11-13 08:48:55,293 INFO /usr/local/bin/bench schedule
+2024-11-13 08:53:25,178 INFO /home/roaa/frappe-env/bin/bench build
+2024-11-13 09:06:04,379 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-13 09:06:04,691 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-13 09:06:04,692 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-13 09:06:04,710 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-13 09:06:04,712 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-13 09:06:42,306 INFO /usr/local/bin/bench install-app erpnext
+2024-11-13 09:07:06,066 INFO /usr/local/bin/bench reinstall
+2024-11-13 09:08:46,064 INFO /usr/local/bin/bench install-app erpnext
+2024-11-13 09:12:21,689 INFO /usr/local/bin/bench migrate
+2024-11-13 09:12:56,561 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-13 09:12:56,907 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-13 09:12:56,933 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-13 09:12:56,936 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-13 09:12:56,937 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-13 09:19:24,800 INFO /usr/local/bin/bench migrate
+2024-11-13 09:20:40,438 INFO /usr/local/bin/bench build
+2024-11-13 09:26:16,113 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-13 09:26:16,420 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-13 09:26:16,424 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-13 09:26:16,454 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-13 09:26:16,456 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-13 09:27:57,133 INFO /usr/local/bin/bench uninstall-app propms
+2024-11-13 09:30:37,615 INFO /usr/local/bin/bench install propms
+2024-11-13 09:30:37,615 WARNING superuser privileges required for this command
+2024-11-13 09:30:48,727 INFO /usr/local/bin/bench install-app propms
+2024-11-13 09:31:36,594 INFO /usr/local/bin/bench migrate
+2024-11-13 09:32:11,064 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-13 09:32:11,376 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-13 09:32:11,384 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-13 09:32:11,396 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-13 09:32:11,411 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-13 09:33:13,105 INFO /usr/local/bin/bench build
+2024-11-13 09:33:41,793 INFO /usr/local/bin/bench migrate
+2024-11-13 09:34:09,056 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-13 09:34:09,351 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-13 09:34:09,372 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-13 09:34:09,417 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-13 09:34:09,439 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-13 09:34:53,912 INFO /usr/local/bin/bench reinstall
+2024-11-13 09:39:57,356 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-13 09:39:57,658 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-13 09:39:57,670 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-13 09:39:57,673 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-13 09:39:57,675 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-13 09:44:42,928 INFO /usr/local/bin/bench uninstall propms
+2024-11-13 09:44:51,092 INFO /usr/local/bin/bench uninstall-app propms
+2024-11-13 09:45:06,169 INFO /usr/local/bin/bench build
+2024-11-13 09:45:34,596 INFO /usr/local/bin/bench migrate
+2024-11-13 09:46:05,276 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-13 09:46:05,594 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-13 09:46:05,612 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-13 09:46:05,640 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-13 09:46:05,744 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-13 09:48:52,082 INFO /usr/local/bin/bench install-app propms
+2024-11-13 09:49:12,712 INFO /usr/local/bin/bench build
+2024-11-13 09:49:36,095 INFO /usr/local/bin/bench migrate
+2024-11-13 09:50:01,456 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-13 09:50:01,756 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-13 09:50:01,759 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-13 09:50:01,809 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-13 09:50:01,821 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-13 15:18:49,842 INFO /usr/local/bin/bench get-app modern_desk https://github.com/pratheeshrussell/frappe-modern-desk
+2024-11-13 15:18:49,856 LOG Getting frappe-modern-desk
+2024-11-13 15:18:49,856 DEBUG cd ./apps && git clone https://github.com/pratheeshrussell/frappe-modern-desk  --depth 1 --origin upstream
+2024-11-13 15:18:50,834 LOG Installing modern_desk
+2024-11-13 15:18:50,834 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip install --quiet --upgrade -e /home/roaa/final/apps/modern_desk 
+2024-11-13 15:18:55,070 DEBUG bench build --app modern_desk
+2024-11-13 15:18:55,258 INFO /usr/local/bin/bench build --app modern_desk
+2024-11-13 15:19:09,796 DEBUG cd /home/roaa/final && sudo supervisorctl restart frappe:
+2024-11-13 15:19:10,122 WARNING cd /home/roaa/final && sudo supervisorctl restart frappe: executed with exit code 2
+2024-11-13 15:19:10,122 WARNING restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+2024-11-13 15:19:16,116 INFO /usr/local/bin/bench install-app modern_desk
+2024-11-13 15:19:36,212 INFO /usr/local/bin/bench clear-cache
+2024-11-13 15:19:42,996 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-13 15:19:43,393 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-13 15:19:43,426 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-13 15:19:43,432 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-13 15:19:43,441 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-13 15:22:02,739 INFO /usr/local/bin/bench remove-from-installed-apps modern_desk
+2024-11-13 15:22:18,539 INFO /usr/local/bin/bench remove-app modern_desk
+2024-11-13 15:22:18,750 INFO /usr/local/bin/bench --site all list-apps --format json
+2024-11-13 15:22:19,801 INFO /usr/local/bin/bench --site final.local list-apps
+2024-11-13 15:22:20,538 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip uninstall -y modern_desk
+2024-11-13 15:22:23,679 INFO App moved from apps/modern_desk to archived/apps/modern_desk-2024-11-13
+2024-11-13 15:22:24,300 DEBUG cd /home/roaa/final && sudo supervisorctl restart frappe:
+2024-11-13 15:22:24,669 WARNING cd /home/roaa/final && sudo supervisorctl restart frappe: executed with exit code 2
+2024-11-13 15:22:24,669 WARNING restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+2024-11-13 15:26:52,465 INFO /usr/local/bin/bench get-app https://github.com/Monogramm/erpnext_template
+2024-11-13 15:26:52,477 LOG Getting erpnext_template
+2024-11-13 15:26:52,477 DEBUG cd ./apps && git clone https://github.com/Monogramm/erpnext_template  --depth 1 --origin upstream
+2024-11-13 15:26:53,654 LOG Installing erpnext_template
+2024-11-13 15:26:53,654 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip install --quiet --upgrade -e /home/roaa/final/apps/erpnext_template 
+2024-11-13 15:26:56,937 DEBUG cd /home/roaa/final/apps/erpnext_template && yarn install --check-files
+2024-11-13 15:30:22,749 DEBUG bench build --app erpnext_template
+2024-11-13 15:30:23,253 INFO /usr/local/bin/bench build --app erpnext_template
+2024-11-13 15:30:29,103 DEBUG cd /home/roaa/final && sudo supervisorctl restart frappe:
+2024-11-13 15:30:29,437 WARNING cd /home/roaa/final && sudo supervisorctl restart frappe: executed with exit code 2
+2024-11-13 15:30:29,437 WARNING restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+2024-11-13 15:31:24,408 INFO /usr/local/bin/bench install-app erpnext_template
+2024-11-13 15:31:43,378 INFO /usr/local/bin/bench run-tests --app erpnext_template
+2024-11-13 15:32:05,626 INFO /usr/local/bin/bench --site final.local set-config allow_tests true
+2024-11-13 15:32:09,225 INFO /usr/local/bin/bench run-tests --app erpnext_template
+2024-11-13 15:32:19,302 INFO /usr/local/bin/bench clear-cache
+2024-11-13 15:32:25,252 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-13 15:32:25,733 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-13 15:32:25,735 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-13 15:32:25,742 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-13 15:32:25,752 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-13 15:36:45,506 INFO /usr/local/bin/bench remove-from-installed-apps erpnext_template
+2024-11-13 15:37:04,254 INFO /usr/local/bin/bench remove-app erpnext_template
+2024-11-13 15:37:04,462 INFO /usr/local/bin/bench --site all list-apps --format json
+2024-11-13 15:37:05,703 INFO /usr/local/bin/bench --site final.local list-apps
+2024-11-13 15:37:06,489 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip uninstall -y erpnext_template
+2024-11-13 15:37:09,584 INFO App moved from apps/erpnext_template to archived/apps/erpnext_template-2024-11-13
+2024-11-13 15:37:10,206 DEBUG cd /home/roaa/final && sudo supervisorctl restart frappe:
+2024-11-13 15:37:10,530 WARNING cd /home/roaa/final && sudo supervisorctl restart frappe: executed with exit code 2
+2024-11-13 15:37:10,530 WARNING restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+2024-11-13 15:39:15,190 INFO /usr/local/bin/bench get-app https://github.com/tahir-zaqout/sundae_theme.git
+2024-11-13 15:39:15,200 LOG Getting sundae_theme
+2024-11-13 15:39:15,201 DEBUG cd ./apps && git clone https://github.com/tahir-zaqout/sundae_theme.git  --depth 1 --origin upstream
+2024-11-13 15:39:16,530 LOG Installing sundae_theme
+2024-11-13 15:39:16,530 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip install --quiet --upgrade -e /home/roaa/final/apps/sundae_theme 
+2024-11-13 15:39:19,146 DEBUG bench build --app sundae_theme
+2024-11-13 15:39:19,380 INFO /usr/local/bin/bench build --app sundae_theme
+2024-11-13 15:39:22,759 DEBUG cd /home/roaa/final && sudo supervisorctl restart frappe:
+2024-11-13 15:39:23,057 WARNING cd /home/roaa/final && sudo supervisorctl restart frappe: executed with exit code 2
+2024-11-13 15:39:23,057 WARNING restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+2024-11-13 15:39:46,477 INFO /usr/local/bin/bench install-app sundae_theme
+2024-11-13 15:40:05,761 INFO /usr/local/bin/bench clear-cache
+2024-11-13 15:40:22,843 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-13 15:40:23,251 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-13 15:40:23,270 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-13 15:40:23,309 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-13 15:40:23,310 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-13 15:59:30,976 INFO /usr/local/bin/bench clear-cache
+2024-11-13 15:59:36,254 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-13 15:59:36,666 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-13 15:59:36,673 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-13 15:59:36,675 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-13 15:59:36,701 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-13 16:04:23,057 INFO /usr/local/bin/bench clear-cache
+2024-11-13 16:09:27,367 INFO /usr/local/bin/bench clear-cache
+2024-11-13 16:14:09,490 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-13 16:14:09,875 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-13 16:14:09,878 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-13 16:14:09,899 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-13 16:14:09,933 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-13 16:18:29,468 INFO /usr/local/bin/bench get-app https://github.com/Muhammad-shaalan/pink-theme.git
+2024-11-13 16:18:29,485 LOG Getting pink-theme
+2024-11-13 16:18:29,485 DEBUG cd ./apps && git clone https://github.com/Muhammad-shaalan/pink-theme.git  --depth 1 --origin upstream
+2024-11-13 16:18:30,446 LOG Installing pink_theme
+2024-11-13 16:18:30,447 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip install --quiet --upgrade -e /home/roaa/final/apps/pink_theme 
+2024-11-13 16:18:33,486 DEBUG bench build --app pink_theme
+2024-11-13 16:18:33,733 INFO /usr/local/bin/bench build --app pink_theme
+2024-11-13 16:18:42,063 DEBUG cd /home/roaa/final && sudo supervisorctl restart frappe:
+2024-11-13 16:18:42,459 WARNING cd /home/roaa/final && sudo supervisorctl restart frappe: executed with exit code 2
+2024-11-13 16:18:42,460 WARNING restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+2024-11-13 16:19:07,698 INFO /usr/local/bin/bench install-app pink_theme
+2024-11-13 16:19:16,474 INFO /usr/local/bin/bench clear-cache
+2024-11-13 16:19:25,894 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-13 16:19:26,302 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-13 16:19:26,303 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-13 16:19:26,307 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-13 16:19:26,308 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-13 16:20:57,201 INFO /usr/local/bin/bench remove-from-installed-apps pink_theme
+2024-11-13 16:21:10,908 INFO /usr/local/bin/bench remove-app pink_theme
+2024-11-13 16:21:11,148 INFO /usr/local/bin/bench --site all list-apps --format json
+2024-11-13 16:21:12,200 INFO /usr/local/bin/bench --site final.local list-apps
+2024-11-13 16:21:12,891 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip uninstall -y pink_theme
+2024-11-13 16:21:16,379 INFO App moved from apps/pink_theme to archived/apps/pink_theme-2024-11-13
+2024-11-13 16:21:17,157 DEBUG cd /home/roaa/final && sudo supervisorctl restart frappe:
+2024-11-13 16:21:17,487 WARNING cd /home/roaa/final && sudo supervisorctl restart frappe: executed with exit code 2
+2024-11-13 16:21:17,488 WARNING restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+2024-11-13 16:21:21,643 INFO /usr/local/bin/bench clear-cache
+2024-11-13 16:27:53,329 INFO /usr/local/bin/bench clear-cache
+2024-11-13 16:27:59,937 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-13 16:28:00,428 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-13 16:28:00,437 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-13 16:28:00,443 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-13 16:28:00,453 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-13 16:29:35,544 INFO /usr/local/bin/bench clear-website-cache
+2024-11-13 16:29:42,834 INFO /home/roaa/frappe-env/bin/bench start
+2024-11-13 16:29:43,247 INFO /home/roaa/frappe-env/bin/bench watch
+2024-11-13 16:29:43,255 INFO /home/roaa/frappe-env/bin/bench schedule
+2024-11-13 16:29:43,276 INFO /home/roaa/frappe-env/bin/bench serve --port 8001
+2024-11-13 16:29:43,292 INFO /home/roaa/frappe-env/bin/bench worker
+2024-11-13 17:05:53,659 INFO /usr/local/bin/bench start
+2024-11-13 17:05:54,000 INFO /usr/local/bin/bench serve --port 8001
+2024-11-13 17:05:54,001 INFO /usr/local/bin/bench schedule
+2024-11-13 17:05:54,005 INFO /usr/local/bin/bench watch
+2024-11-13 17:05:54,025 INFO /usr/local/bin/bench worker
+2024-11-13 17:09:15,698 INFO /usr/local/bin/bench use final.local
+2024-11-13 17:09:24,156 INFO /usr/local/bin/bench console
+2024-11-13 17:23:23,226 INFO /usr/local/bin/bench clear-cache
+2024-11-13 17:23:29,183 INFO /usr/local/bin/bench start
+2024-11-13 17:23:29,468 INFO /usr/local/bin/bench schedule
+2024-11-13 17:23:29,469 INFO /usr/local/bin/bench serve --port 8001
+2024-11-13 17:23:29,472 INFO /usr/local/bin/bench watch
+2024-11-13 17:23:29,476 INFO /usr/local/bin/bench worker
+2024-11-13 17:27:04,030 INFO /usr/local/bin/bench console
+2024-11-13 17:29:39,339 INFO /usr/local/bin/bench clear-cache
+2024-11-13 17:29:46,099 INFO /usr/local/bin/bench start
+2024-11-13 17:29:46,393 INFO /usr/local/bin/bench worker
+2024-11-13 17:29:46,400 INFO /usr/local/bin/bench serve --port 8001
+2024-11-13 17:29:46,401 INFO /usr/local/bin/bench watch
+2024-11-13 17:29:46,421 INFO /usr/local/bin/bench schedule
+2024-11-13 17:30:21,620 INFO /usr/local/bin/bench console
+2024-11-13 17:30:57,033 INFO /usr/local/bin/bench clear-cache
+2024-11-13 17:31:01,652 INFO /usr/local/bin/bench start
+2024-11-13 17:31:01,938 INFO /usr/local/bin/bench schedule
+2024-11-13 17:31:01,945 INFO /usr/local/bin/bench serve --port 8001
+2024-11-13 17:31:01,948 INFO /usr/local/bin/bench worker
+2024-11-13 17:31:01,950 INFO /usr/local/bin/bench watch
+2024-11-13 17:31:59,887 INFO /usr/local/bin/bench console
+2024-11-13 17:32:47,027 INFO /usr/local/bin/bench clear-cache
+2024-11-13 17:32:57,460 INFO /usr/local/bin/bench clear-website-cache
+2024-11-13 17:33:04,094 INFO /usr/local/bin/bench start
+2024-11-13 17:33:04,403 INFO /usr/local/bin/bench worker
+2024-11-13 17:33:04,410 INFO /usr/local/bin/bench schedule
+2024-11-13 17:33:04,421 INFO /usr/local/bin/bench serve --port 8001
+2024-11-13 17:33:04,422 INFO /usr/local/bin/bench watch
+2024-11-13 17:34:24,925 INFO /usr/local/bin/bench build
+2024-11-13 17:35:25,983 INFO /usr/local/bin/bench migrate
+2024-11-13 17:35:52,036 INFO /usr/local/bin/bench clear-cache
+2024-11-13 17:36:23,470 INFO /usr/local/bin/bench start
+2024-11-13 17:36:23,775 INFO /usr/local/bin/bench serve --port 8001
+2024-11-13 17:36:23,778 INFO /usr/local/bin/bench schedule
+2024-11-13 17:36:23,784 INFO /usr/local/bin/bench watch
+2024-11-13 17:36:23,788 INFO /usr/local/bin/bench worker
+2024-11-13 17:37:26,355 INFO /usr/local/bin/bench console
+2024-11-13 17:40:41,021 INFO /usr/local/bin/bench clear-cache
+2024-11-13 17:40:43,775 INFO /usr/local/bin/bench console
+2024-11-13 17:41:14,490 INFO /usr/local/bin/bench start
+2024-11-13 17:41:14,789 INFO /usr/local/bin/bench serve --port 8001
+2024-11-13 17:41:14,791 INFO /usr/local/bin/bench worker
+2024-11-13 17:41:14,793 INFO /usr/local/bin/bench schedule
+2024-11-13 17:41:14,821 INFO /usr/local/bin/bench watch
+2024-11-13 18:00:02,125 INFO /home/roaa/frappe-env/bin/bench --verbose --site all backup
+2024-11-13 18:07:38,992 INFO /usr/local/bin/bench clear-cache
+2024-11-13 18:07:47,126 INFO /usr/local/bin/bench start
+2024-11-13 18:07:47,417 INFO /usr/local/bin/bench serve --port 8001
+2024-11-13 18:07:47,421 INFO /usr/local/bin/bench schedule
+2024-11-13 18:07:47,421 INFO /usr/local/bin/bench worker
+2024-11-13 18:07:47,439 INFO /usr/local/bin/bench watch
+2024-11-13 19:15:41,350 INFO /usr/local/bin/bench new-app propm
+2024-11-13 19:15:41,357 LOG creating new app propm
+2024-11-13 19:16:09,721 LOG Installing propm
+2024-11-13 19:16:09,724 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip install --quiet --upgrade -e /home/roaa/final/apps/propm 
+2024-11-13 19:16:13,733 DEBUG bench build --app propm
+2024-11-13 19:16:13,932 INFO /usr/local/bin/bench build --app propm
+2024-11-13 19:16:22,004 DEBUG cd /home/roaa/final && sudo supervisorctl restart frappe:
+2024-11-13 19:16:22,270 WARNING cd /home/roaa/final && sudo supervisorctl restart frappe: executed with exit code 2
+2024-11-13 19:16:22,270 WARNING restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+2024-11-13 19:17:00,912 INFO /usr/local/bin/bench install-app propm
+2024-11-13 19:19:01,212 INFO /usr/local/bin/bench start
+2024-11-13 19:19:01,590 INFO /usr/local/bin/bench schedule
+2024-11-13 19:19:01,601 INFO /usr/local/bin/bench watch
+2024-11-13 19:19:01,603 INFO /usr/local/bin/bench serve --port 8001
+2024-11-13 19:19:01,609 INFO /usr/local/bin/bench worker
+2024-11-13 19:20:52,864 INFO /usr/local/bin/bench clear-cache
+2024-11-13 19:20:59,127 INFO /usr/local/bin/bench start
+2024-11-13 19:20:59,506 INFO /usr/local/bin/bench serve --port 8001
+2024-11-13 19:20:59,512 INFO /usr/local/bin/bench worker
+2024-11-13 19:20:59,537 INFO /usr/local/bin/bench schedule
+2024-11-13 19:20:59,538 INFO /usr/local/bin/bench watch
+2024-11-14 00:00:31,480 INFO /home/roaa/frappe-env/bin/bench --verbose --site all backup
+2024-11-14 13:02:10,468 INFO /usr/local/bin/bench start
+2024-11-14 13:02:10,798 INFO /usr/local/bin/bench schedule
+2024-11-14 13:02:10,802 INFO /usr/local/bin/bench serve --port 8001
+2024-11-14 13:02:10,805 INFO /usr/local/bin/bench watch
+2024-11-14 13:02:10,809 INFO /usr/local/bin/bench worker
+2024-11-14 15:09:51,795 INFO /usr/local/bin/bench clear-cache
+2024-11-14 15:09:55,459 INFO /usr/local/bin/bench start
+2024-11-14 15:09:55,763 INFO /usr/local/bin/bench serve --port 8001
+2024-11-14 15:09:55,786 INFO /usr/local/bin/bench watch
+2024-11-14 15:09:55,789 INFO /usr/local/bin/bench schedule
+2024-11-14 15:09:55,808 INFO /usr/local/bin/bench worker
+2024-11-14 16:31:37,232 INFO /usr/local/bin/bench clear-cache
+2024-11-14 16:31:42,216 INFO /usr/local/bin/bench start
+2024-11-14 16:31:42,517 INFO /usr/local/bin/bench watch
+2024-11-14 16:31:42,519 INFO /usr/local/bin/bench serve --port 8001
+2024-11-14 16:31:42,524 INFO /usr/local/bin/bench schedule
+2024-11-14 16:31:42,528 INFO /usr/local/bin/bench worker
+2024-11-14 16:38:03,038 INFO /usr/local/bin/bench uninstall-app propm
+2024-11-14 16:38:47,225 INFO /usr/local/bin/bench remove-app propm
+2024-11-14 16:38:47,381 INFO /usr/local/bin/bench --site all list-apps --format json
+2024-11-14 16:38:48,103 INFO /usr/local/bin/bench --site final.local list-apps
+2024-11-14 16:38:48,687 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip uninstall -y propm
+2024-11-14 16:38:50,021 INFO App moved from apps/propm to archived/apps/propm-2024-11-14
+2024-11-14 16:38:57,822 DEBUG cd /home/roaa/final && sudo supervisorctl restart frappe:
+2024-11-14 16:38:58,059 WARNING cd /home/roaa/final && sudo supervisorctl restart frappe: executed with exit code 2
+2024-11-14 16:38:58,059 WARNING restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+2024-11-14 16:39:14,767 INFO /usr/local/bin/bench migrate
+2024-11-14 16:39:41,140 INFO /usr/local/bin/bench clear-cache
+2024-11-14 16:39:52,375 INFO /usr/local/bin/bench start
+2024-11-14 16:39:52,682 INFO /usr/local/bin/bench watch
+2024-11-14 16:39:52,686 INFO /usr/local/bin/bench schedule
+2024-11-14 16:39:52,691 INFO /usr/local/bin/bench worker
+2024-11-14 16:39:52,725 INFO /usr/local/bin/bench serve --port 8001
+2024-11-14 16:44:22,549 INFO /usr/local/bin/bench clear-cache
+2024-11-14 16:44:27,214 INFO /usr/local/bin/bench start
+2024-11-14 16:44:27,505 INFO /usr/local/bin/bench worker
+2024-11-14 16:44:27,509 INFO /usr/local/bin/bench watch
+2024-11-14 16:44:27,517 INFO /usr/local/bin/bench serve --port 8001
+2024-11-14 16:44:27,530 INFO /usr/local/bin/bench schedule
+2024-11-14 16:45:05,539 INFO /usr/local/bin/bench migrate
+2024-11-14 17:41:32,776 INFO /usr/local/bin/bench set-config -g server_script_enabled 1
+2024-11-14 17:41:41,525 INFO /usr/local/bin/bench clear-cache
+2024-11-14 17:49:03,216 INFO /usr/local/bin/bench start
+2024-11-14 17:49:03,599 INFO /usr/local/bin/bench schedule
+2024-11-14 17:49:03,605 INFO /usr/local/bin/bench serve --port 8001
+2024-11-14 17:49:03,609 INFO /usr/local/bin/bench worker
+2024-11-14 17:49:03,623 INFO /usr/local/bin/bench watch
+2024-11-14 18:00:01,544 INFO /home/roaa/frappe-env/bin/bench --verbose --site all backup
+2024-11-16 13:21:45,586 INFO /usr/local/bin/bench start
+2024-11-16 13:21:45,887 INFO /usr/local/bin/bench serve --port 8001
+2024-11-16 13:21:45,893 INFO /usr/local/bin/bench watch
+2024-11-16 13:21:45,901 INFO /usr/local/bin/bench schedule
+2024-11-16 13:21:45,912 INFO /usr/local/bin/bench worker
+2024-11-16 14:03:52,338 INFO /usr/local/bin/bench clear-cache
+2024-11-16 14:06:05,660 INFO /usr/local/bin/bench start
+2024-11-16 14:06:05,970 INFO /usr/local/bin/bench watch
+2024-11-16 14:06:05,973 INFO /usr/local/bin/bench serve --port 8001
+2024-11-16 14:06:05,979 INFO /usr/local/bin/bench worker
+2024-11-16 14:06:05,997 INFO /usr/local/bin/bench schedule
+2024-11-16 14:35:39,770 INFO /usr/local/bin/bench start
+2024-11-16 14:35:40,234 INFO /usr/local/bin/bench schedule
+2024-11-16 14:35:40,261 INFO /usr/local/bin/bench worker
+2024-11-16 14:35:40,274 INFO /usr/local/bin/bench serve --port 8001
+2024-11-16 14:35:40,300 INFO /usr/local/bin/bench watch
+2024-11-16 15:42:13,706 INFO /usr/local/bin/bench start
+2024-11-16 15:42:14,057 INFO /usr/local/bin/bench schedule
+2024-11-16 15:42:14,130 INFO /usr/local/bin/bench watch
+2024-11-16 15:42:14,196 INFO /usr/local/bin/bench serve --port 8001
+2024-11-16 15:42:14,202 INFO /usr/local/bin/bench worker
+2024-11-16 15:43:01,078 INFO /usr/local/bin/bench start
+2024-11-16 15:43:01,469 INFO /usr/local/bin/bench schedule
+2024-11-16 15:43:01,483 INFO /usr/local/bin/bench watch
+2024-11-16 15:43:01,550 INFO /usr/local/bin/bench serve --port 8001
+2024-11-16 15:43:01,586 INFO /usr/local/bin/bench worker
+2024-11-16 16:09:36,909 INFO /usr/local/bin/bench clear-cache
+2024-11-16 16:09:43,194 INFO /usr/local/bin/bench start
+2024-11-16 16:09:43,487 INFO /usr/local/bin/bench serve --port 8001
+2024-11-16 16:09:43,487 INFO /usr/local/bin/bench schedule
+2024-11-16 16:09:43,502 INFO /usr/local/bin/bench watch
+2024-11-16 16:09:43,505 INFO /usr/local/bin/bench worker
+2024-11-16 17:23:39,376 INFO /usr/local/bin/bench get-app crm
+2024-11-16 17:23:40,233 LOG Getting crm
+2024-11-16 17:23:40,234 DEBUG cd ./apps && git clone https://github.com/frappe/crm.git  --depth 1 --origin upstream
+2024-11-16 17:23:49,644 LOG Installing crm
+2024-11-16 17:23:49,645 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip install --quiet --upgrade -e /home/roaa/final/apps/crm 
+2024-11-16 17:24:00,723 DEBUG cd /home/roaa/final/apps/crm && yarn install --check-files
+2024-11-16 17:24:22,409 DEBUG bench build --app crm
+2024-11-16 17:24:22,600 INFO /usr/local/bin/bench build --app crm
+2024-11-16 17:24:30,179 WARNING bench build --app crm executed with exit code 1
+2024-11-16 17:24:30,182 WARNING /usr/local/bin/bench get-app crm executed with exit code 1
+2024-11-16 17:24:51,582 INFO /usr/local/bin/bench build --app crm
+2024-11-16 17:25:53,828 INFO /usr/local/bin/bench start
+2024-11-16 17:25:54,317 INFO /usr/local/bin/bench watch
+2024-11-16 17:25:54,364 INFO /usr/local/bin/bench worker
+2024-11-16 17:25:54,420 INFO /usr/local/bin/bench serve --port 8001
+2024-11-16 17:25:54,451 INFO /usr/local/bin/bench schedule
+2024-11-16 17:30:53,880 INFO /usr/local/bin/bench build --app crm
+2024-11-16 17:35:44,480 INFO /usr/local/bin/bench install-app crm
+2024-11-16 17:36:07,888 INFO /usr/local/bin/bench migrate
+2024-11-17 14:47:50,431 INFO /usr/local/bin/bench migrate
+2024-11-17 14:48:57,193 INFO /usr/local/bin/bench clear-cache
+2024-11-17 14:49:11,601 INFO /usr/local/bin/bench start
+2024-11-17 14:49:11,960 INFO /usr/local/bin/bench schedule
+2024-11-17 14:49:11,993 INFO /usr/local/bin/bench worker
+2024-11-17 14:49:12,003 INFO /usr/local/bin/bench watch
+2024-11-17 14:49:12,062 INFO /usr/local/bin/bench serve --port 8001
+2024-11-17 14:50:08,142 INFO /usr/local/bin/bench build
+2024-11-17 14:51:41,411 INFO /usr/local/bin/bench migrate
+2024-11-17 14:52:18,029 INFO /usr/local/bin/bench clear-cache
+2024-11-17 14:53:22,327 INFO /usr/local/bin/bench start
+2024-11-17 14:53:22,677 INFO /usr/local/bin/bench watch
+2024-11-17 14:53:22,678 INFO /usr/local/bin/bench serve --port 8001
+2024-11-17 14:53:22,683 INFO /usr/local/bin/bench worker
+2024-11-17 14:53:22,683 INFO /usr/local/bin/bench schedule
+2024-11-17 14:55:13,222 INFO /usr/local/bin/bench build
+2024-11-17 14:56:33,415 INFO /usr/local/bin/bench migrate
+2024-11-17 14:57:07,263 INFO /usr/local/bin/bench clear-cache
+2024-11-17 15:02:04,584 INFO /usr/local/bin/bench start
+2024-11-17 15:02:04,906 INFO /usr/local/bin/bench worker
+2024-11-17 15:02:04,912 INFO /usr/local/bin/bench serve --port 8001
+2024-11-17 15:02:04,914 INFO /usr/local/bin/bench watch
+2024-11-17 15:02:04,933 INFO /usr/local/bin/bench schedule
+2024-11-17 15:07:18,208 INFO /usr/local/bin/bench build
+2024-11-17 15:08:38,163 INFO /usr/local/bin/bench migrate
+2024-11-17 15:09:13,894 INFO /usr/local/bin/bench clear-cache
+2024-11-17 15:09:20,096 INFO /usr/local/bin/bench start
+2024-11-17 15:09:20,414 INFO /usr/local/bin/bench schedule
+2024-11-17 15:09:20,417 INFO /usr/local/bin/bench worker
+2024-11-17 15:09:20,420 INFO /usr/local/bin/bench serve --port 8001
+2024-11-17 15:09:20,428 INFO /usr/local/bin/bench watch
+2024-11-18 14:59:03,510 INFO /usr/local/bin/bench list-apps
+2024-11-18 14:59:16,106 INFO /usr/local/bin/bench use final.local
+2024-11-18 14:59:22,086 INFO /usr/local/bin/bench start
+2024-11-18 14:59:35,912 INFO /usr/local/bin/bench start
+2024-11-18 15:03:21,958 INFO /usr/local/bin/bench use final.local
+2024-11-18 15:03:30,269 INFO /usr/local/bin/bench list-apps
+2024-11-18 15:03:35,920 INFO /usr/local/bin/bench start
+2024-11-18 15:03:36,252 INFO /usr/local/bin/bench watch
+2024-11-18 15:03:36,255 INFO /usr/local/bin/bench schedule
+2024-11-18 15:03:36,265 INFO /usr/local/bin/bench serve --port 8001
+2024-11-18 15:03:36,278 INFO /usr/local/bin/bench worker
+2024-11-18 15:07:17,634 INFO /usr/local/bin/bench get-app https://github.com/tridz-dev/quick_kanban.git
+2024-11-18 15:07:17,644 LOG Getting quick_kanban
+2024-11-18 15:07:17,644 DEBUG cd ./apps && git clone https://github.com/tridz-dev/quick_kanban.git  --depth 1 --origin upstream
+2024-11-18 15:07:18,820 LOG Installing quick_kanban
+2024-11-18 15:07:18,820 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip install --quiet --upgrade -e /home/roaa/final/apps/quick_kanban 
+2024-11-18 15:07:21,813 DEBUG bench build --app quick_kanban
+2024-11-18 15:07:21,986 INFO /usr/local/bin/bench build --app quick_kanban
+2024-11-18 15:07:28,055 DEBUG cd /home/roaa/final && sudo supervisorctl restart frappe:
+2024-11-18 15:07:28,299 WARNING cd /home/roaa/final && sudo supervisorctl restart frappe: executed with exit code 2
+2024-11-18 15:07:28,299 WARNING restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+2024-11-18 15:07:41,290 INFO /usr/local/bin/bench install-app quick_kanban
+2024-11-18 15:07:51,020 INFO /usr/local/bin/bench build
+2024-11-18 15:09:01,808 INFO /usr/local/bin/bench start
+2024-11-18 15:09:02,108 INFO /usr/local/bin/bench serve --port 8001
+2024-11-18 15:09:02,112 INFO /usr/local/bin/bench watch
+2024-11-18 15:09:02,120 INFO /usr/local/bin/bench schedule
+2024-11-18 15:09:02,148 INFO /usr/local/bin/bench worker
+2024-11-18 15:09:09,231 INFO /usr/local/bin/bench migrate
+2024-11-18 15:09:45,800 INFO /usr/local/bin/bench clear-cache
+2024-11-18 15:09:52,594 INFO /usr/local/bin/bench clear-website-cache
+2024-11-18 15:09:57,111 INFO /usr/local/bin/bench start
+2024-11-18 15:09:57,414 INFO /usr/local/bin/bench schedule
+2024-11-18 15:09:57,419 INFO /usr/local/bin/bench serve --port 8001
+2024-11-18 15:09:57,432 INFO /usr/local/bin/bench worker
+2024-11-18 15:09:57,456 INFO /usr/local/bin/bench watch
+2024-11-18 17:56:31,711 INFO /usr/local/bin/bench new-app my_crm_app
+2024-11-18 17:56:31,717 LOG creating new app my_crm_app
+2024-11-18 17:57:35,251 LOG Installing my_crm_app
+2024-11-18 17:57:35,253 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip install --quiet --upgrade -e /home/roaa/final/apps/my_crm_app 
+2024-11-18 17:57:38,045 DEBUG bench build --app my_crm_app
+2024-11-18 17:57:38,204 INFO /usr/local/bin/bench build --app my_crm_app
+2024-11-18 17:57:48,425 DEBUG cd /home/roaa/final && sudo supervisorctl restart frappe:
+2024-11-18 17:57:48,685 WARNING cd /home/roaa/final && sudo supervisorctl restart frappe: executed with exit code 2
+2024-11-18 17:57:48,685 WARNING restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+2024-11-18 17:58:01,516 INFO /usr/local/bin/bench install-app my_crm_app
+2024-11-18 18:00:01,949 INFO /home/roaa/frappe-env/bin/bench --verbose --site all backup
+2024-11-18 18:10:56,709 INFO /usr/local/bin/bench build
+2024-11-18 18:12:57,115 INFO /usr/local/bin/bench migrate
+2024-11-18 18:13:32,757 INFO /usr/local/bin/bench clear-cache
+2024-11-18 18:13:35,699 INFO /usr/local/bin/bench start
+2024-11-18 18:13:36,027 INFO /usr/local/bin/bench worker
+2024-11-18 18:13:36,028 INFO /usr/local/bin/bench watch
+2024-11-18 18:13:36,030 INFO /usr/local/bin/bench schedule
+2024-11-18 18:13:36,057 INFO /usr/local/bin/bench serve --port 8001
+2024-11-18 19:24:29,741 INFO /usr/local/bin/bench get-app https://github.com/Nasr-Systems/sidebar_collapsed_default
+2024-11-18 19:24:29,752 LOG Getting sidebar_collapsed_default
+2024-11-18 19:24:29,753 DEBUG cd ./apps && git clone https://github.com/Nasr-Systems/sidebar_collapsed_default  --depth 1 --origin upstream
+2024-11-18 19:24:30,746 LOG Installing sidebar_collapsed_default
+2024-11-18 19:24:30,747 DEBUG cd /home/roaa/final && /home/roaa/final/env/bin/python -m pip install --quiet --upgrade -e /home/roaa/final/apps/sidebar_collapsed_default 
+2024-11-18 19:24:33,609 DEBUG bench build --app sidebar_collapsed_default
+2024-11-18 19:24:33,772 INFO /usr/local/bin/bench build --app sidebar_collapsed_default
+2024-11-18 19:25:05,927 DEBUG cd /home/roaa/final && sudo supervisorctl restart frappe:
+2024-11-18 19:25:06,179 WARNING cd /home/roaa/final && sudo supervisorctl restart frappe: executed with exit code 2
+2024-11-18 19:25:06,179 WARNING restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+2024-11-18 19:26:39,119 INFO /usr/local/bin/bench install-app sidebar_collapsed_default
+2024-11-18 19:26:53,801 INFO /usr/local/bin/bench migrate
+2024-11-18 19:27:39,194 INFO /usr/local/bin/bench clear-cache
+2024-11-18 19:27:43,375 INFO /usr/local/bin/bench start
+2024-11-18 19:27:43,695 INFO /usr/local/bin/bench watch
+2024-11-18 19:27:43,704 INFO /usr/local/bin/bench worker
+2024-11-18 19:27:43,713 INFO /usr/local/bin/bench schedule
+2024-11-18 19:27:43,722 INFO /usr/local/bin/bench serve --port 8001
+2024-11-18 21:47:35,811 INFO /usr/local/bin/bench build
+2024-11-18 21:48:59,159 INFO /usr/local/bin/bench migrate
+2024-11-18 21:52:35,396 INFO /usr/local/bin/bench build
+2024-11-18 21:53:57,366 INFO /usr/local/bin/bench migrate
+2024-11-18 21:57:27,818 INFO /usr/local/bin/bench build
+2024-11-18 22:01:23,309 INFO /usr/local/bin/bench migrate
+2024-11-18 22:03:16,315 INFO /usr/local/bin/bench build
+2024-11-18 22:04:28,273 INFO /usr/local/bin/bench migrate
+2024-11-18 22:08:10,360 INFO /usr/local/bin/bench build
+2024-11-18 22:09:27,730 INFO /usr/local/bin/bench migrate
+2024-11-18 22:12:43,064 INFO /usr/local/bin/bench build
+2024-11-18 22:14:03,270 INFO /usr/local/bin/bench migrate
+2024-11-19 12:36:26,225 INFO /usr/local/bin/bench use final.local
+2024-11-19 12:36:33,578 INFO /usr/local/bin/bench start
+2024-11-19 12:36:34,265 INFO /usr/local/bin/bench schedule
+2024-11-19 12:36:34,266 INFO /usr/local/bin/bench watch
+2024-11-19 12:36:34,270 INFO /usr/local/bin/bench serve --port 8001
+2024-11-19 12:36:34,308 INFO /usr/local/bin/bench worker
+2024-11-19 13:11:15,197 INFO /usr/local/bin/bench build
+2024-11-19 13:17:20,607 INFO /usr/local/bin/bench migrate
+2024-11-19 13:18:22,570 INFO /usr/local/bin/bench start
+2024-11-19 13:18:23,036 INFO /usr/local/bin/bench serve --port 8001
+2024-11-19 13:18:23,040 INFO /usr/local/bin/bench worker
+2024-11-19 13:18:23,065 INFO /usr/local/bin/bench watch
+2024-11-19 13:18:23,203 INFO /usr/local/bin/bench schedule
+2024-11-19 15:07:08,158 INFO /usr/local/bin/bench build
+2024-11-19 15:08:54,529 INFO /usr/local/bin/bench migrate
+2024-11-19 15:09:26,535 INFO /usr/local/bin/bench start
+2024-11-19 15:09:26,860 INFO /usr/local/bin/bench watch
+2024-11-19 15:09:26,861 INFO /usr/local/bin/bench schedule
+2024-11-19 15:09:26,874 INFO /usr/local/bin/bench serve --port 8001
+2024-11-19 15:09:26,931 INFO /usr/local/bin/bench worker
+2024-11-19 17:49:28,189 INFO /usr/local/bin/bench build
+2024-11-19 17:50:38,337 INFO /usr/local/bin/bench migrate
+2024-11-19 18:00:02,159 INFO /home/roaa/frappe-env/bin/bench --verbose --site all backup
+2024-11-19 18:17:32,320 INFO /usr/local/bin/bench build
+2024-11-19 21:59:38,176 INFO /usr/local/bin/bench mariadb
+2024-11-19 22:01:50,335 INFO /usr/local/bin/bench mariadb
+2024-11-19 22:14:29,264 INFO /usr/local/bin/bench migrate
+2024-11-19 22:15:29,462 INFO /usr/local/bin/bench clear-cache
+2024-11-19 22:15:36,641 INFO /usr/local/bin/bench clear-website-cache
+2024-11-19 22:15:41,006 INFO /usr/local/bin/bench start
+2024-11-19 22:15:41,342 INFO /usr/local/bin/bench worker
+2024-11-19 22:15:41,346 INFO /usr/local/bin/bench schedule
+2024-11-19 22:15:41,350 INFO /usr/local/bin/bench watch
+2024-11-19 22:15:41,370 INFO /usr/local/bin/bench serve --port 8001
+2024-11-19 22:30:32,084 INFO /usr/local/bin/bench mariadb
+2024-11-20 10:59:29,918 INFO /usr/local/bin/bench use final.local
+2024-11-20 10:59:37,117 INFO /usr/local/bin/bench start
+2024-11-20 10:59:37,856 INFO /usr/local/bin/bench schedule
+2024-11-20 10:59:37,858 INFO /usr/local/bin/bench serve --port 8001
+2024-11-20 10:59:37,880 INFO /usr/local/bin/bench worker
+2024-11-20 10:59:37,911 INFO /usr/local/bin/bench watch
+2024-11-20 11:29:50,644 INFO /usr/local/bin/bench mariadb
+2024-11-20 11:57:11,256 INFO /usr/local/bin/bench mariadb
+2024-11-20 12:00:02,840 INFO /home/roaa/frappe-env/bin/bench --verbose --site all backup
+2024-11-20 12:29:52,309 INFO /usr/local/bin/bench mariadb
+2024-11-20 12:30:37,309 INFO /usr/local/bin/bench mariadb
+2024-11-20 12:31:13,505 INFO /usr/local/bin/bench start
+2024-11-20 12:31:13,825 INFO /usr/local/bin/bench serve --port 8001
+2024-11-20 12:31:13,845 INFO /usr/local/bin/bench schedule
+2024-11-20 12:31:13,853 INFO /usr/local/bin/bench worker
+2024-11-20 12:31:13,878 INFO /usr/local/bin/bench watch
+2024-11-20 12:40:33,814 INFO /usr/local/bin/bench mariadb
+2024-11-20 13:32:58,686 INFO /usr/local/bin/bench build
+2024-11-20 13:34:09,779 INFO /usr/local/bin/bench migrate
+2024-11-20 15:26:38,016 INFO /usr/local/bin/bench mariadb
+2024-11-20 15:33:15,290 INFO /usr/local/bin/bench mariadb
+2024-11-20 15:35:50,132 INFO /usr/local/bin/bench mariadb
+2024-11-20 15:45:12,244 INFO /usr/local/bin/bench mariadb
+2024-11-20 17:14:42,936 INFO /usr/local/bin/bench use final.local

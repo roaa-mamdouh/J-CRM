@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: csf_tz
+Version: 2.1.0
+Summary: Country Specific Functionality Tanzania
+Author: Aakvatech
+Author-email: info@aakvatech.com
+Requires-Dist: frappe
+Requires-Dist: erpnext
