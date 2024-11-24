@@ -2731,3 +2731,168 @@
 2024-11-22 20:19:04,695 Cleaning registries for queue: home-roaa-final:short
 2024-11-22 20:19:04,697 Cleaning registries for queue: home-roaa-final:default
 2024-11-22 20:19:04,698 Cleaning registries for queue: home-roaa-final:long
+2024-11-22 20:46:04,902 Cleaning registries for queue: home-roaa-final:short
+2024-11-22 20:46:04,910 Cleaning registries for queue: home-roaa-final:default
+2024-11-22 20:46:04,915 Cleaning registries for queue: home-roaa-final:long
+2024-11-22 21:13:05,188 Cleaning registries for queue: home-roaa-final:short
+2024-11-22 21:13:05,191 Cleaning registries for queue: home-roaa-final:default
+2024-11-22 21:13:05,192 Cleaning registries for queue: home-roaa-final:long
+2024-11-22 21:40:05,452 Cleaning registries for queue: home-roaa-final:short
+2024-11-22 21:40:05,457 Cleaning registries for queue: home-roaa-final:default
+2024-11-22 21:40:05,461 Cleaning registries for queue: home-roaa-final:long
+2024-11-22 22:00:41,231 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property', 'name': 'unit 2'}, method='frappe.model.delete_doc.delete_dynamic_links', site='final.local', user='Administrator') (final.local::b0a6754f-9f12-4474-b468-907915c495ed)
+2024-11-22 22:00:42,692 home-roaa-final:default: Job OK (final.local::b0a6754f-9f12-4474-b468-907915c495ed)
+2024-11-22 22:00:42,692 Result is kept for 600 seconds
+2024-11-22 22:00:42,714 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property', 'name': 'unit 1'}, method='frappe.model.delete_doc.delete_dynamic_links', site='final.local', user='Administrator') (final.local::9b9ac05f-3d51-48f9-b9a6-b90c78e00a23)
+2024-11-22 22:00:42,778 home-roaa-final:default: Job OK (final.local::9b9ac05f-3d51-48f9-b9a6-b90c78e00a23)
+2024-11-22 22:00:42,778 Result is kept for 600 seconds
+2024-11-22 22:00:42,784 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property', 'name': 'prop'}, method='frappe.model.delete_doc.delete_dynamic_links', site='final.local', user='Administrator') (final.local::f6bafd6d-23a5-418a-8ed7-2dab2f07f2ae)
+2024-11-22 22:00:42,849 home-roaa-final:default: Job OK (final.local::f6bafd6d-23a5-418a-8ed7-2dab2f07f2ae)
+2024-11-22 22:00:42,850 Result is kept for 600 seconds
+2024-11-22 22:00:42,855 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property', 'name': 'habhoub'}, method='frappe.model.delete_doc.delete_dynamic_links', site='final.local', user='Administrator') (final.local::ce0b8b42-ec6c-4dfc-b0bf-44a6a27ed12b)
+2024-11-22 22:00:42,915 home-roaa-final:default: Job OK (final.local::ce0b8b42-ec6c-4dfc-b0bf-44a6a27ed12b)
+2024-11-22 22:00:42,915 Result is kept for 600 seconds
+2024-11-22 22:07:27,962 Cleaning registries for queue: home-roaa-final:short
+2024-11-22 22:07:27,963 Cleaning registries for queue: home-roaa-final:default
+2024-11-22 22:07:27,964 Cleaning registries for queue: home-roaa-final:long
+2024-11-22 22:34:28,203 Cleaning registries for queue: home-roaa-final:short
+2024-11-22 22:34:28,204 Cleaning registries for queue: home-roaa-final:default
+2024-11-22 22:34:28,213 Cleaning registries for queue: home-roaa-final:long
+2024-11-22 23:01:28,518 Cleaning registries for queue: home-roaa-final:short
+2024-11-22 23:01:28,521 Cleaning registries for queue: home-roaa-final:default
+2024-11-22 23:01:28,523 Cleaning registries for queue: home-roaa-final:long
+2024-11-22 23:28:28,749 Cleaning registries for queue: home-roaa-final:short
+2024-11-22 23:28:28,750 Cleaning registries for queue: home-roaa-final:default
+2024-11-22 23:28:28,754 Cleaning registries for queue: home-roaa-final:long
+2024-11-22 23:29:35,009 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'CRM Lead', 'name': 'CRM-LEAD-2024-00022'}, method='frappe.model.delete_doc.delete_dynamic_links', site='final.local', user='Administrator') (final.local::7df17af6-2f29-48a9-9a0e-5bf2d964713c)
+2024-11-22 23:29:35,110 home-roaa-final:default: Job OK (final.local::7df17af6-2f29-48a9-9a0e-5bf2d964713c)
+2024-11-22 23:29:35,110 Result is kept for 600 seconds
+2024-11-22 23:29:56,162 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'CRM Lead', 'name': 'CRM-LEAD-2024-00022'}, method='frappe.model.delete_doc.delete_dynamic_links', site='final.local', user='Administrator') (final.local::9ff33bf6-14a7-4f65-84e7-4a4118a790ba)
+2024-11-22 23:29:56,317 home-roaa-final:default: Job OK (final.local::9ff33bf6-14a7-4f65-84e7-4a4118a790ba)
+2024-11-22 23:29:56,317 Result is kept for 600 seconds
+2024-11-22 23:32:33,393 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'CRM Lead', 'name': 'CRM-LEAD-2024-00022'}, method='frappe.model.delete_doc.delete_dynamic_links', site='final.local', user='Administrator') (final.local::8c84bb27-4c95-4681-94b6-6c4c23486618)
+2024-11-22 23:32:33,514 home-roaa-final:default: Job OK (final.local::8c84bb27-4c95-4681-94b6-6c4c23486618)
+2024-11-22 23:32:33,515 Result is kept for 600 seconds
+2024-11-22 23:32:33,521 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'CRM Lead', 'name': 'CRM-LEAD-2024-00019'}, method='frappe.model.delete_doc.delete_dynamic_links', site='final.local', user='Administrator') (final.local::dac00ec3-59fb-4542-9f6e-ac45689aa7ab)
+2024-11-22 23:32:33,637 home-roaa-final:default: Job OK (final.local::dac00ec3-59fb-4542-9f6e-ac45689aa7ab)
+2024-11-22 23:32:33,637 Result is kept for 600 seconds
+2024-11-22 23:39:19,668 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'CRM Lead', 'name': 'CRM-LEAD-2024-00022'}, method='frappe.model.delete_doc.delete_dynamic_links', site='final.local', user='Administrator') (final.local::b610b24f-c8aa-4f62-89a9-31d1851c296e)
+2024-11-22 23:39:19,778 home-roaa-final:default: Job OK (final.local::b610b24f-c8aa-4f62-89a9-31d1851c296e)
+2024-11-22 23:39:19,778 Result is kept for 600 seconds
+2024-11-22 23:52:49,848 Cleaning registries for queue: home-roaa-final:short
+2024-11-22 23:52:49,850 Cleaning registries for queue: home-roaa-final:default
+2024-11-22 23:52:49,851 Cleaning registries for queue: home-roaa-final:long
+2024-11-23 00:03:08,014 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'CRM Lead', 'name': 'CRM-LEAD-2024-00017'}, method='frappe.model.delete_doc.delete_dynamic_links', site='final.local', user='Administrator') (final.local::ae3c49cb-e6de-4114-bb59-278b9eca91ff)
+2024-11-23 00:03:08,182 home-roaa-final:default: Job OK (final.local::ae3c49cb-e6de-4114-bb59-278b9eca91ff)
+2024-11-23 00:03:08,182 Result is kept for 600 seconds
+2024-11-23 00:16:38,318 Cleaning registries for queue: home-roaa-final:short
+2024-11-23 00:16:38,319 Cleaning registries for queue: home-roaa-final:default
+2024-11-23 00:16:38,320 Cleaning registries for queue: home-roaa-final:long
+2024-11-23 00:21:58,604 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'CRM Lead', 'name': 'CRM-LEAD-2024-00022'}, method='frappe.model.delete_doc.delete_dynamic_links', site='final.local', user='Administrator') (final.local::f1467b8f-aafe-408e-b777-5ed4a8948a98)
+2024-11-23 00:21:58,720 home-roaa-final:default: Job OK (final.local::f1467b8f-aafe-408e-b777-5ed4a8948a98)
+2024-11-23 00:21:58,720 Result is kept for 600 seconds
+2024-11-23 19:44:50,696 Cleaning registries for queue: home-roaa-final:short
+2024-11-23 19:44:50,714 Cleaning registries for queue: home-roaa-final:default
+2024-11-23 19:44:50,717 Cleaning registries for queue: home-roaa-final:long
+2024-11-23 20:11:51,033 Cleaning registries for queue: home-roaa-final:short
+2024-11-23 20:11:51,037 Cleaning registries for queue: home-roaa-final:default
+2024-11-23 20:11:51,041 Cleaning registries for queue: home-roaa-final:long
+2024-11-23 20:38:51,367 Cleaning registries for queue: home-roaa-final:short
+2024-11-23 20:38:51,369 Cleaning registries for queue: home-roaa-final:default
+2024-11-23 20:38:51,370 Cleaning registries for queue: home-roaa-final:long
+2024-11-23 21:05:51,665 Cleaning registries for queue: home-roaa-final:short
+2024-11-23 21:05:51,667 Cleaning registries for queue: home-roaa-final:default
+2024-11-23 21:05:51,671 Cleaning registries for queue: home-roaa-final:long
+2024-11-23 21:32:51,930 Cleaning registries for queue: home-roaa-final:short
+2024-11-23 21:32:51,932 Cleaning registries for queue: home-roaa-final:default
+2024-11-23 21:32:51,933 Cleaning registries for queue: home-roaa-final:long
+2024-11-23 21:48:56,509 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Reservation', 'name': 'RES00002'}, method='frappe.model.delete_doc.delete_dynamic_links', site='final.local', user='Administrator') (final.local::fd00133c-ca7a-4897-8735-4dba7191ed95)
+2024-11-23 21:48:56,709 home-roaa-final:default: Job OK (final.local::fd00133c-ca7a-4897-8735-4dba7191ed95)
+2024-11-23 21:48:56,709 Result is kept for 600 seconds
+2024-11-23 21:54:06,494 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Reservation', 'name': 'RES00001'}, method='frappe.model.delete_doc.delete_dynamic_links', site='final.local', user='Administrator') (final.local::1ac9a75b-c7a3-44c0-8c21-2c99897aa5e7)
+2024-11-23 21:54:06,570 home-roaa-final:default: Job OK (final.local::1ac9a75b-c7a3-44c0-8c21-2c99897aa5e7)
+2024-11-23 21:54:06,570 Result is kept for 600 seconds
+2024-11-23 22:00:51,595 Cleaning registries for queue: home-roaa-final:short
+2024-11-23 22:00:51,596 Cleaning registries for queue: home-roaa-final:default
+2024-11-23 22:00:51,597 Cleaning registries for queue: home-roaa-final:long
+2024-11-23 22:12:09,619 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Reservation', 'name': 'RES00003'}, method='frappe.model.delete_doc.delete_dynamic_links', site='final.local', user='Administrator') (final.local::b52856cf-d3bb-4c60-a998-b074d7087005)
+2024-11-23 22:12:09,762 home-roaa-final:default: Job OK (final.local::b52856cf-d3bb-4c60-a998-b074d7087005)
+2024-11-23 22:12:09,763 Result is kept for 600 seconds
+2024-11-23 22:12:09,778 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Reservation', 'name': 'RES00002'}, method='frappe.model.delete_doc.delete_dynamic_links', site='final.local', user='Administrator') (final.local::3bcddbf8-619f-43ec-b57a-08424adb3bca)
+2024-11-23 22:12:09,876 home-roaa-final:default: Job OK (final.local::3bcddbf8-619f-43ec-b57a-08424adb3bca)
+2024-11-23 22:12:09,876 Result is kept for 600 seconds
+2024-11-23 22:12:09,888 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Reservation', 'name': 'RES00001'}, method='frappe.model.delete_doc.delete_dynamic_links', site='final.local', user='Administrator') (final.local::10e66e36-ddb0-49ab-b3fe-e002c29040f8)
+2024-11-23 22:12:09,973 home-roaa-final:default: Job OK (final.local::10e66e36-ddb0-49ab-b3fe-e002c29040f8)
+2024-11-23 22:12:09,973 Result is kept for 600 seconds
+2024-11-23 22:16:54,223 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Reservation', 'name': 'RES00001'}, method='frappe.model.delete_doc.delete_dynamic_links', site='final.local', user='Administrator') (final.local::85094c58-9abe-47f2-87d3-bc958d685082)
+2024-11-23 22:16:54,354 home-roaa-final:default: Job OK (final.local::85094c58-9abe-47f2-87d3-bc958d685082)
+2024-11-23 22:16:54,354 Result is kept for 600 seconds
+2024-11-23 22:23:39,381 Cleaning registries for queue: home-roaa-final:short
+2024-11-23 22:23:39,384 Cleaning registries for queue: home-roaa-final:default
+2024-11-23 22:23:39,385 Cleaning registries for queue: home-roaa-final:long
+2024-11-23 22:27:28,976 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Event', 'name': 'EV00002'}, method='frappe.model.delete_doc.delete_dynamic_links', site='final.local', user='Administrator') (final.local::a6a534fd-8363-4f93-8da8-3f78a03c3441)
+2024-11-23 22:27:29,058 home-roaa-final:default: Job OK (final.local::a6a534fd-8363-4f93-8da8-3f78a03c3441)
+2024-11-23 22:27:29,059 Result is kept for 600 seconds
+2024-11-23 22:27:30,575 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Event', 'name': 'EV00001'}, method='frappe.model.delete_doc.delete_dynamic_links', site='final.local', user='Administrator') (final.local::d8cfbc2f-25a3-4617-b720-be48cc8c7238)
+2024-11-23 22:27:30,672 home-roaa-final:default: Job OK (final.local::d8cfbc2f-25a3-4617-b720-be48cc8c7238)
+2024-11-23 22:27:30,673 Result is kept for 600 seconds
+2024-11-23 22:35:33,291 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Event', 'name': 'EV00001'}, method='frappe.model.delete_doc.delete_dynamic_links', site='final.local', user='Administrator') (final.local::d2c43fa4-1cef-4f07-9e36-fad6dfb241da)
+2024-11-23 22:35:33,436 home-roaa-final:default: Job OK (final.local::d2c43fa4-1cef-4f07-9e36-fad6dfb241da)
+2024-11-23 22:35:33,436 Result is kept for 600 seconds
+2024-11-23 22:49:03,545 Cleaning registries for queue: home-roaa-final:short
+2024-11-23 22:49:03,561 Cleaning registries for queue: home-roaa-final:default
+2024-11-23 22:49:03,565 Cleaning registries for queue: home-roaa-final:long
+2024-11-23 23:16:03,870 Cleaning registries for queue: home-roaa-final:short
+2024-11-23 23:16:03,871 Cleaning registries for queue: home-roaa-final:default
+2024-11-23 23:16:03,876 Cleaning registries for queue: home-roaa-final:long
+2024-11-23 23:17:02,301 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Reservation', 'name': 'RES00004'}, method='frappe.model.delete_doc.delete_dynamic_links', site='final.local', user='Administrator') (final.local::9566a997-9794-432a-9106-4a9dde7849bf)
+2024-11-23 23:17:02,489 home-roaa-final:default: Job OK (final.local::9566a997-9794-432a-9106-4a9dde7849bf)
+2024-11-23 23:17:02,490 Result is kept for 600 seconds
+2024-11-23 23:17:02,525 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Reservation', 'name': 'RES00003'}, method='frappe.model.delete_doc.delete_dynamic_links', site='final.local', user='Administrator') (final.local::6af5b246-fc1f-48bb-83bf-fa2e4ae9d79c)
+2024-11-23 23:17:03,106 home-roaa-final:default: Job OK (final.local::6af5b246-fc1f-48bb-83bf-fa2e4ae9d79c)
+2024-11-23 23:17:03,106 Result is kept for 600 seconds
+2024-11-23 23:17:03,115 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Reservation', 'name': 'RES00002'}, method='frappe.model.delete_doc.delete_dynamic_links', site='final.local', user='Administrator') (final.local::cd8394b1-2fca-417a-b470-2b46169da17e)
+2024-11-23 23:17:03,247 home-roaa-final:default: Job OK (final.local::cd8394b1-2fca-417a-b470-2b46169da17e)
+2024-11-23 23:17:03,247 Result is kept for 600 seconds
+2024-11-23 23:44:03,486 Cleaning registries for queue: home-roaa-final:short
+2024-11-23 23:44:03,489 Cleaning registries for queue: home-roaa-final:default
+2024-11-23 23:44:03,492 Cleaning registries for queue: home-roaa-final:long
+2024-11-24 11:46:48,569 Cleaning registries for queue: home-roaa-final:short
+2024-11-24 11:46:48,585 Cleaning registries for queue: home-roaa-final:default
+2024-11-24 11:46:48,591 Cleaning registries for queue: home-roaa-final:long
+2024-11-24 12:13:48,785 Cleaning registries for queue: home-roaa-final:short
+2024-11-24 12:13:48,791 Cleaning registries for queue: home-roaa-final:default
+2024-11-24 12:13:48,802 Cleaning registries for queue: home-roaa-final:long
+2024-11-24 12:31:42,566 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.desk.doctype.notification_log.notification_log.make_notification_lo..., kwargs={'doc': {'type': 'Assignment', 'document_type': 'CRM Lead', 'subject': '<st..., method='frappe.desk.doctype.notification_log.notification_log.make_notification_lo..., site='final.local', user='Administrator') (final.local::4917a9c4-4d15-4905-97a1-ee19d7e9b6f8)
+2024-11-24 12:31:45,884 home-roaa-final:default: Job OK (final.local::4917a9c4-4d15-4905-97a1-ee19d7e9b6f8)
+2024-11-24 12:31:45,884 Result is kept for 600 seconds
+2024-11-24 12:38:30,985 Cleaning registries for queue: home-roaa-final:short
+2024-11-24 12:38:30,988 Cleaning registries for queue: home-roaa-final:default
+2024-11-24 12:38:30,989 Cleaning registries for queue: home-roaa-final:long
+2024-11-24 13:05:31,283 Cleaning registries for queue: home-roaa-final:short
+2024-11-24 13:05:31,284 Cleaning registries for queue: home-roaa-final:default
+2024-11-24 13:05:31,286 Cleaning registries for queue: home-roaa-final:long
+2024-11-24 13:32:31,471 Cleaning registries for queue: home-roaa-final:short
+2024-11-24 13:32:31,474 Cleaning registries for queue: home-roaa-final:default
+2024-11-24 13:32:31,476 Cleaning registries for queue: home-roaa-final:long
+2024-11-24 13:59:31,714 Cleaning registries for queue: home-roaa-final:short
+2024-11-24 13:59:31,716 Cleaning registries for queue: home-roaa-final:default
+2024-11-24 13:59:31,717 Cleaning registries for queue: home-roaa-final:long
+2024-11-24 14:26:31,965 Cleaning registries for queue: home-roaa-final:short
+2024-11-24 14:26:31,986 Cleaning registries for queue: home-roaa-final:default
+2024-11-24 14:26:31,994 Cleaning registries for queue: home-roaa-final:long
+2024-11-24 14:53:32,220 Cleaning registries for queue: home-roaa-final:short
+2024-11-24 14:53:32,225 Cleaning registries for queue: home-roaa-final:default
+2024-11-24 14:53:32,234 Cleaning registries for queue: home-roaa-final:long
+2024-11-24 14:59:27,108 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'CRM Lead', 'name': 'CRM-LEAD-2024-00024'}, method='frappe.model.delete_doc.delete_dynamic_links', site='final.local', user='Administrator') (final.local::b4d3e6e4-cde0-4ee4-9fe7-8f6fc73531b8)
+2024-11-24 14:59:27,197 home-roaa-final:default: Job OK (final.local::b4d3e6e4-cde0-4ee4-9fe7-8f6fc73531b8)
+2024-11-24 14:59:27,197 Result is kept for 600 seconds
+2024-11-24 15:19:42,312 Cleaning registries for queue: home-roaa-final:short
+2024-11-24 15:19:42,314 Cleaning registries for queue: home-roaa-final:default
+2024-11-24 15:19:42,315 Cleaning registries for queue: home-roaa-final:long
+2024-11-24 15:21:02,124 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'CRM Lead', 'name': 'CRM-LEAD-2024-00024'}, method='frappe.model.delete_doc.delete_dynamic_links', site='final.local', user='Administrator') (final.local::9eb1b8bb-4315-4f85-8e72-cabbe8a66631)
+2024-11-24 15:21:02,265 home-roaa-final:default: Job OK (final.local::9eb1b8bb-4315-4f85-8e72-cabbe8a66631)
+2024-11-24 15:21:02,265 Result is kept for 600 seconds
+2024-11-24 15:29:52,830 home-roaa-final:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.utils.global_search.rebuild_for_doctype', kwargs={'doctype': 'Custom HTML Block'}, method='frappe.utils.global_search.rebuild_for_doctype', site='final.local', user='Administrator') (final.local::cbc515a1-9d66-4d50-aea8-b0b564622354)
+2024-11-24 15:29:53,060 home-roaa-final:default: Job OK (final.local::cbc515a1-9d66-4d50-aea8-b0b564622354)
+2024-11-24 15:29:53,061 Result is kept for 600 seconds

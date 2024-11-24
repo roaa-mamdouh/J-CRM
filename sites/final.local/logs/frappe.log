@@ -508,3 +508,27 @@ Form Dict: {'start': '2024-11-20', 'end': '2024-11-20', 'cmd': 'frappe.desk.doct
 2024-11-20 15:35:38,927 ERROR frappe New Exception collected in error log
 Site: final.local
 Form Dict: {'start': '2024-11-20', 'end': '2024-11-20', 'cmd': 'frappe.desk.doctype.event.event.get_events'}
+2024-11-22 23:32:51,491 ERROR frappe New Exception collected in error log
+Site: final.local
+Form Dict: {'doc': '{"docstatus":0,"doctype":"CRM Lead","name":"new-crm-lead-chmuauqjmp","__islocal":1,"__unsaved":1,"owner":"Administrator","naming_series":"CRM-LEAD-.YYYY.-","status":"New","no_of_employees":"1-10","converted":0,"duplicated":0,"sla_status":"","communication_status":"Open","status_change_log":[],"salutation":"Master","first_name":"lllllllll","phone":"01225796352"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-24 12:40:47,359 ERROR frappe New Exception collected in error log
+Site: final.local
+Form Dict: {'recipients': 'Administrator', 'subject': 'Duplicate Lead Found', 'content': 'A new lead with the same phone number was found: new-crm-lead-qodersltns.', 'communication_type': 'Notification', 'send_email': '1', 'cmd': 'frappe.core.doctype.communication.email.make'}
+2024-11-24 13:37:23,185 ERROR frappe New Exception collected in error log
+Site: final.local
+Form Dict: {'doc': '{"docstatus":0,"doctype":"CRM Lead","name":"new-crm-lead-kfzwtyutgk","__islocal":1,"__unsaved":1,"owner":"Administrator","naming_series":"CRM-LEAD-.YYYY.-","status":"New","no_of_employees":"1-10","converted":0,"duplicated":0,"sla_status":"","communication_status":"Open","status_change_log":[],"salutation":"Madam","first_name":"Esraa"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-24 14:16:22,586 ERROR frappe New Exception collected in error log
+Site: final.local
+Form Dict: {'user_id': 'mamdouhroaa3@gmail.com', 'title': 'Duplicate Lead Detected', 'body': 'A duplicate lead with phone number 01225796352 was found.', 'link': '/app/crm-lead/new-crm-lead-sptyemygwk', 'icon': 'octicon octicon-alert', 'data': '{"extra_info":"This lead is marked as duplicate."}', 'cmd': 'frappe.push_notification.notify_user'}
+2024-11-24 14:22:02,741 ERROR frappe New Exception collected in error log
+Site: final.local
+Form Dict: {'user_id': 'mamdouhroaa3@gmail.com', 'title': 'Duplicate Lead Detected', 'body': 'A duplicate lead with phone number 01225796352 was found.', 'link': '/app/crm-lead/new-crm-lead-mejzfjxfoi', 'icon': 'octicon octicon-alert', 'data': '{"extra_info":"This lead is marked as duplicate."}', 'cmd': 'frappe.push_notification.notify_user'}
+2024-11-24 14:25:02,161 ERROR frappe New Exception collected in error log
+Site: final.local
+Form Dict: {'user_id': 'mamdouhroaa3@gmail.com', 'title': 'Duplicate Lead Detected', 'body': 'A duplicate lead with phone number 01225796352 was found.', 'link': '/app/crm-lead/new-crm-lead-fmhlsweygn', 'icon': 'octicon octicon-alert', 'data': '{"extra_info":"This lead is marked as duplicate."}', 'cmd': 'frappe.push_notification.notify_user'}
+2024-11-24 14:25:19,572 ERROR frappe New Exception collected in error log
+Site: final.local
+Form Dict: {'user_id': 'mamdouhroaa3@gmail.com', 'title': 'Duplicate Lead Detected', 'body': 'A duplicate lead with phone number 01225796352 was found.', 'link': '/app/crm-lead/new-crm-lead-fmhlsweygn', 'icon': 'octicon octicon-alert', 'data': '{"extra_info":"This lead is marked as duplicate."}', 'cmd': 'frappe.push_notification.notify_user'}
+2024-11-24 14:30:59,171 ERROR frappe New Exception collected in error log
+Site: final.local
+Form Dict: {'user_id': 'mamdouhroaa3@gmail.com', 'title': 'Duplicate Lead Detected', 'body': 'A duplicate lead with phone number 01225796352 was found.', 'link': '/app/crm-lead/new-crm-lead-yvzxltfndi', 'icon': 'octicon octicon-alert', 'data': '{"extra_info":"This lead is marked as duplicate."}', 'cmd': 'frappe.push_notification.notify_user'}

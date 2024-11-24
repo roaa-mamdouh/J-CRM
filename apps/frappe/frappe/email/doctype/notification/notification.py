@@ -39,18 +39,7 @@ class Notification(Document):
 		days_in_advance: DF.Int
 		document_type: DF.Link
 		enabled: DF.Check
-		event: DF.Literal[
-			"",
-			"New",
-			"Save",
-			"Submit",
-			"Cancel",
-			"Days After",
-			"Days Before",
-			"Value Change",
-			"Method",
-			"Custom",
-		]
+		event: DF.Literal["", "New", "Save", "Submit", "Cancel", "Days After", "Days Before", "Value Change", "Method", "Custom"]
 		is_standard: DF.Check
 		message: DF.Code | None
 		message_type: DF.Literal["Markdown", "HTML", "Plain Text"]
