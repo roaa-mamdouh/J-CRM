@@ -18,3 +18,4 @@ SELECT\040event_type\040FROM\040`tabEvent`;
 ALTER\040TABLE\040`tabEvent`\040\040ADD\040COLUMN\040event_type\040varchar(140);
 commit;
 SELECT\040event_type\040FROM\040`tabEvent`;
+SELECT\040name,\040duplicated\040FROM\040`tabCRM\040Lead`;

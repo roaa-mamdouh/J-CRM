@@ -291,7 +291,7 @@
  "icon": "fa fa-envelope",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-04 05:53:40.595130",
+ "modified": "2024-11-23 00:21:28.891511",
  "modified_by": "Administrator",
  "module": "Email",
  "name": "Notification",
@@ -304,7 +304,7 @@
    "export": 1,
    "read": 1,
    "report": 1,
-   "role": "System Manager",
+   "role": "All",
    "share": 1,
    "write": 1
   }

@@ -539,7 +539,11 @@ standard_help_items = [
 		"is_standard": 1,
 	},
 ]
-
+doc_events = {
+    "CRM Lead": {
+        "on_update": "frappe.lead_notification.send_notification"
+    }
+}
 # log doctype cleanups to automatically add in log settings
 default_log_clearing_doctypes = {
 	"Error Log": 14,

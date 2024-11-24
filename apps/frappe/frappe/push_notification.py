@@ -292,3 +292,32 @@ def subscribe(fcm_token: str, project_name: str) -> dict:
 def unsubscribe(fcm_token: str, project_name: str) -> dict:
 	success, message = PushNotification(project_name).remove_token(frappe.session.user, fcm_token)
 	return {"success": success, "message": message}
+
+
+
+
+
+
+@frappe.whitelist()
+def notify_user(user_id, title, body, link=None, icon=None, data=None, truncate_body=True, strip_html=True):
+    """
+    Wrapper for the send_notification_to_user function to make it callable from client-side.
+    """
+    # Use a hardcoded project name
+    project_name = "My Project"  # Replace with your actual project name
+
+    push_notification = PushNotification(project_name=project_name)
+
+    return push_notification.send_notification_to_user(
+        user_id=user_id,
+        title=title,
+        body=body,
+        link=link,
+        icon=icon,
+        data=data,
+        truncate_body=truncate_body,
+        strip_html=strip_html,
+    )
+
+
+

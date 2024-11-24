@@ -243,3 +243,85 @@ ALTER TABLE `tabEvent` ADD COLUMN `showing` int(1) not null default 0, ADD COLUM
 ALTER TABLE `tabEvent` MODIFY `reference_docname` varchar(140)
 2024-11-20 15:23:06,618 WARNING database DDL Query made to DB:
 ALTER TABLE `tabEvent` MODIFY `reference_docname` varchar(140)
+2024-11-22 21:49:51,052 WARNING database DDL Query made to DB:
+create table `tabReservation` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`lease_item` varchar(140),
+`frequency` varchar(140),
+`amount` decimal(21,9) not null default 0,
+`currency_code` varchar(140) default 'USD',
+`charge_basis` varchar(140),
+`charge_rate` varchar(140),
+`witholding_tax` decimal(21,9) not null default 0,
+`paid_by` varchar(140),
+`invoice_item_group` varchar(140),
+`document_type` varchar(140) default 'Sales Invoice',
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-11-22 21:50:50,942 WARNING database DDL Query made to DB:
+ALTER TABLE `tabReservation` ADD COLUMN `is_property_unit` int(1) not null default 1
+2024-11-22 21:50:50,950 WARNING database DDL Query made to DB:
+ALTER TABLE `tabReservation` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `witholding_tax` decimal(21,9) not null default 0
+2024-11-22 21:51:22,927 WARNING database DDL Query made to DB:
+ALTER TABLE `tabReservation` ADD COLUMN `propert_unit` varchar(140)
+2024-11-22 21:51:22,932 WARNING database DDL Query made to DB:
+ALTER TABLE `tabReservation` MODIFY `witholding_tax` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0
+2024-11-22 21:53:41,501 WARNING database DDL Query made to DB:
+ALTER TABLE `tabReservation` ADD COLUMN `unit` varchar(140)
+2024-11-22 21:53:41,506 WARNING database DDL Query made to DB:
+ALTER TABLE `tabReservation` MODIFY `witholding_tax` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0
+2024-11-22 21:54:29,515 WARNING database DDL Query made to DB:
+ALTER TABLE `tabReservation` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `witholding_tax` decimal(21,9) not null default 0
+2024-11-22 21:57:59,092 WARNING database DDL Query made to DB:
+ALTER TABLE `tabReservation` ADD COLUMN `status` varchar(140)
+2024-11-22 21:58:13,666 WARNING database DDL Query made to DB:
+ALTER TABLE `tabReservation` MODIFY `status` varchar(140) default 'Reserve'
+2024-11-22 21:59:56,890 WARNING database DDL Query made to DB:
+ALTER TABLE `tabReservation` ADD COLUMN `property_unit` varchar(140)
+2024-11-22 23:24:03,345 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCRM Lead` MODIFY `annual_revenue` decimal(21,9) not null default 0, MODIFY `first_response_time` decimal(21,9), MODIFY `rating` decimal(3,2)
+2024-11-22 23:24:03,367 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCRM Lead` DROP INDEX `phone`
+2024-11-22 23:40:28,224 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCRM Lead` MODIFY `annual_revenue` decimal(21,9) not null default 0, MODIFY `first_response_time` decimal(21,9), MODIFY `rating` decimal(3,2), ADD UNIQUE INDEX IF NOT EXISTS phone (`phone`)
+2024-11-23 21:11:38,743 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProperty` ADD COLUMN `nymber_of_rooms` int(11) not null default 0, ADD COLUMN `city` varchar(140), ADD COLUMN `district` varchar(140), ADD COLUMN `developer` varchar(140), ADD COLUMN `building_number` varchar(140), ADD COLUMN `floor_number` varchar(140), ADD COLUMN `unit_number` varchar(140), ADD COLUMN `total_price` varchar(140)
+2024-11-23 21:11:38,743 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProperty` ADD COLUMN `nymber_of_rooms` int(11) not null default 0, ADD COLUMN `city` varchar(140), ADD COLUMN `district` varchar(140), ADD COLUMN `developer` varchar(140), ADD COLUMN `building_number` varchar(140), ADD COLUMN `floor_number` varchar(140), ADD COLUMN `unit_number` varchar(140), ADD COLUMN `total_price` varchar(140)
+2024-11-23 21:11:38,751 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProperty` MODIFY `security_deposit` decimal(21,9) not null default 0, MODIFY `carpet_area` decimal(21,9) not null default 0, MODIFY `rent` decimal(21,9) not null default 0, MODIFY `builtup_area` decimal(21,9) not null default 0
+2024-11-23 21:11:38,751 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProperty` MODIFY `security_deposit` decimal(21,9) not null default 0, MODIFY `carpet_area` decimal(21,9) not null default 0, MODIFY `rent` decimal(21,9) not null default 0, MODIFY `builtup_area` decimal(21,9) not null default 0
+2024-11-23 21:20:49,658 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProperty` MODIFY `builtup_area` decimal(21,9) not null default 0, MODIFY `security_deposit` decimal(21,9) not null default 0, MODIFY `carpet_area` decimal(21,9) not null default 0
+2024-11-23 21:20:49,658 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProperty` MODIFY `builtup_area` decimal(21,9) not null default 0, MODIFY `security_deposit` decimal(21,9) not null default 0, MODIFY `carpet_area` decimal(21,9) not null default 0
+2024-11-23 21:22:46,908 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProperty` MODIFY `security_deposit` decimal(21,9) not null default 0, MODIFY `builtup_area` decimal(21,9) not null default 0, MODIFY `carpet_area` decimal(21,9) not null default 0
+2024-11-23 21:22:46,908 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProperty` MODIFY `security_deposit` decimal(21,9) not null default 0, MODIFY `builtup_area` decimal(21,9) not null default 0, MODIFY `carpet_area` decimal(21,9) not null default 0
+2024-11-23 21:23:27,201 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProperty` MODIFY `security_deposit` decimal(21,9) not null default 0, MODIFY `is_group` int(1) not null default 1, MODIFY `builtup_area` decimal(21,9) not null default 0, MODIFY `carpet_area` decimal(21,9) not null default 0
+2024-11-23 21:23:27,201 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProperty` MODIFY `security_deposit` decimal(21,9) not null default 0, MODIFY `is_group` int(1) not null default 1, MODIFY `builtup_area` decimal(21,9) not null default 0, MODIFY `carpet_area` decimal(21,9) not null default 0
+2024-11-23 21:24:16,612 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProperty` MODIFY `builtup_area` decimal(21,9) not null default 0, MODIFY `security_deposit` decimal(21,9) not null default 0, MODIFY `carpet_area` decimal(21,9) not null default 0
+2024-11-23 21:24:16,612 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProperty` MODIFY `builtup_area` decimal(21,9) not null default 0, MODIFY `security_deposit` decimal(21,9) not null default 0, MODIFY `carpet_area` decimal(21,9) not null default 0
+2024-11-23 22:10:55,751 WARNING database DDL Query made to DB:
+ALTER TABLE `tabReservation` ADD COLUMN `reserved_by` varchar(140)
+2024-11-23 22:10:55,751 WARNING database DDL Query made to DB:
+ALTER TABLE `tabReservation` ADD COLUMN `reserved_by` varchar(140)
